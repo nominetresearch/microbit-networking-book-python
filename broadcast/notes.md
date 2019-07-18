@@ -7,3 +7,9 @@ Task 1)
 Task 2)
 - Replace MakeCode with Python blocks
 - The files provided _SendNumber.hex_ and _SendString.hex_ cannot be used to test the program written by the user
+
+Task 3)
+- No changes needed
+
+Extended)
+- No changes needed
