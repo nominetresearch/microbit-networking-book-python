@@ -1,7 +1,7 @@
 Networking with the micro:bit - Python Edition
 =============================================
 
-![Cover image](introduction/cover_python.png)
+![Cover image](cover/cover_python.png)
 
 This is the source for the Python edition of the book "Networking with the micro:bit", published at [https://microbit.nominetresearch.uk/networking-book-online/](https://microbit.nominetresearch.uk/networking-book-online/)
 
