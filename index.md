@@ -1,7 +1,7 @@
 Preface
 =======
 
-![Cover image](cover/cover.png)
+![Cover image](cover/cover_python.png)
 
 About the book
 ------------------------------------
