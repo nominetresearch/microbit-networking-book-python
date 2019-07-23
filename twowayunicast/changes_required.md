@@ -2,7 +2,7 @@
 
 Description)
 - Change JavaScript blocks to Python blocks
-- Chnage JavaScript references to Python
+- Change JavaScript references to Python
 
 Task 1)
 - No changes needed
