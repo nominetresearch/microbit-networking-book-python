@@ -1,3 +1,5 @@
+# Extended task:
+
 from microbit import *
 import radio
 
@@ -9,10 +11,10 @@ while True:
         display.show(Image.SAD)
     # Searches for a message, and scrolls it once it has been received
     message = radio.receive()
-    if message is not None: # Can only display a message if one has been received
+    if message is not None: # Displays message if one has been received
         display.scroll(message)
         if message == "Hello":
-            display.show(Image.HAPPY)
+            display.show(Image.HAPPY) # Shows happy face for 2 seconds
             sleep(2000)
-            display.clear()
+            display.clear() # Turns off all leds
             sad = False

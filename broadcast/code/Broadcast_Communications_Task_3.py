@@ -1,3 +1,5 @@
+# Task 3:
+
 from microbit import *
 import radio
 import random
@@ -15,7 +17,7 @@ while True:
         # To avoid this, add a sleep after each button press
         sleep(1000)
     # Chooses a random string to send by radio
-    elif button_b.is_pressed(): # Don't want both buttons being pushed simultaneously, thus elif
+    elif button_b.is_pressed(): # Don't want both buttons being pushed simultaneously, so use elif instead of if
         string = random.choice(stringlist)
         radio.send(string)
         sleep(1000)

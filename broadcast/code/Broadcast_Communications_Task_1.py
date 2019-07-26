@@ -1,7 +1,9 @@
+# Task 1:
+
 from microbit import *
 import radio
 
-# Turns radio on - this must be stated in the code
+# Turns radio on
 radio.on()
 
 # The line below can be used to change the radio group,
