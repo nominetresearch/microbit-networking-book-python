@@ -1,12 +1,13 @@
-# Task 4 Microbit 1
+# Task 4: Left Microbit
 from microbit import *
 
-# Displays on this microbit initially until it tilts right
+# Displays HEART until tilted right
 while accelerometer.current_gesture() != "right":
         display.show(Image.HEART)
 
 while True:
-    # If tilting right, clears display and sets pin1 to high
+    # If tilted right, clear display and set pin1 to high
+    # Otherwise set pin1 low
     if accelerometer.current_gesture() == "right":
         pin1.write_digital(1)
         display.clear()

@@ -47,8 +47,8 @@ telephone. The telephone handset converts the sounds into an
 electrical voltage signal. Then, this signal is transmitted to the
 receiving telephone by wires; and at the receiver, it is converted back into sound.
 
-!!! attention "Exercise 1"
-	What is the wireless physical medium that makes radio communication possible?
+So, that is an example of wired communication. 
+Then, what is the wireless physical medium that makes radio communication possible?
 
 Computers, and also your micro:bit, cannot process signals without
 converting them to binary data: 0s and 1s. Also, the binary data
@@ -177,10 +177,10 @@ Note that the programs that you write for your micro:bits will be symmetric.
 Extended activity
 -----------------
 
-!!! attention "Exercise 2"
+!!! attention "Exercise 1"
 	Watch the [Wired\_pixel\_by\_pixel\_heart.m4v](https://microbit.nominetresearch.uk/networking-book/pixel_heart_transfer.html). Based on this video, discuss with your teammate how you can send more complex data across wires, and design a solution. Program your design.
 
-!!! attention "Exercise 3"
+!!! attention "Exercise 2"
 	Watch the two videos under the Resources section. How are they related to your activity? Discuss.
 
 Problems
