@@ -1,7 +1,7 @@
 # Task 4: Left Microbit
 from microbit import *
 
-# Displays HEART until tilted right
+# Display a HEART until tilted right
 while accelerometer.current_gesture() != "right":
         display.show(Image.HEART)
 
