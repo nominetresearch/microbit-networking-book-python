@@ -126,32 +126,23 @@ teacher’s micro:bit will be the broadcast sender and you will try to
 receive from this micro:bit.
 
 If you are running this activity alone or with a friend, you can find
-the example codes for the broadcasting micro:bit in this folder. You can use these examples to test your receiver
-code by downloading it to a second micro:bit. These files will run on
-your micro:bits, but you will not be able to display the code using
-the JavaScript Blocks editor.
+the example codes for the broadcasting micro:bit in this folder. You can use this example to test your receiver
+code by downloading it to a second micro:bit.
 
 You will complete three tasks to experiment with broadcasting:
 
 ### Task 1: Configure your radio
 
 **Description:** For broadcast communication, you need all your
-micro:bits to have the same radio group ID. This group ID will be the
+micro:bits to have their radios turned on and set to the same radio group ID. 
+This group ID will be the
 broadcast address. This is like tuning into the correct channel to
 receive a TV broadcast.
 
-**Instruction:** Program your receiver micro:bit’s group ID to 0. This
-is the group ID used in the example broadcast sender programs [^2]. For
-this, use the code block for setting the radio group in the MakeCode JavaScript Blocks editor. It’s under
-the Radio menu, as shown in the figure below. You can
-learn about the radio blocks in more detail at
-<https://makecode.microbit.org/reference/radio>.
-
-![Setting the Radio group in MakeCode.](RadioSetGroup.png)
-
-!!! note ""
-	**Figure 3:** Setting the Radio group in MakeCode
-
+**Instruction:** Program your receiver micro:bit to turn on its radio. By default the
+group ID is set to 0. This
+is the group ID used in the example broadcast sender programs [^2].
+See if you can work out how the radio's group ID could be changed and what numbers it could be changed to.
 
 ### Task 2: Receive a broadcast message
 
