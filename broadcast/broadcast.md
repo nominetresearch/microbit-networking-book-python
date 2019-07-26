@@ -139,10 +139,16 @@ This group ID will be the
 broadcast address. This is like tuning into the correct channel to
 receive a TV broadcast.
 
-**Instruction:** Program your receiver micro:bit to turn on its radio, to do this you'll first need to import the radio module. 
+**Instruction:** Program your receiver micro:bit to turn on its radio, to do this you'll first need to import the radio module:
+```Python
+import radio
+```
 By default the group ID is set to 0.
 This is the group ID used in the example broadcast sender programs [^2].
 See if you can work out how the radio's group ID could be changed and what numbers it could be changed to.
+
+If you need help, documentation on the radio module can be found here: 
+[https://microbit-micropython.readthedocs.io/en/latest/radio.html](https://microbit-micropython.readthedocs.io/en/latest/radio.html)
 
 ### Task 2: Receive a broadcast message
 
