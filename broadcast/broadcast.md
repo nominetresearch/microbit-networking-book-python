@@ -139,36 +139,36 @@ This group ID will be the
 broadcast address. This is like tuning into the correct channel to
 receive a TV broadcast.
 
-**Instruction:** Program your receiver micro:bit to turn on its radio. By default the
-group ID is set to 0. This
-is the group ID used in the example broadcast sender programs [^2].
+**Instruction:** Program your receiver micro:bit to turn on its radio, to do this you'll first need to import the radio module. 
+By default the group ID is set to 0.
+This is the group ID used in the example broadcast sender programs [^2].
 See if you can work out how the radio's group ID could be changed and what numbers it could be changed to.
 
 ### Task 2: Receive a broadcast message
 
 **Description:** In this task, you will program your micro:bits to
 receive a message from a broadcasting micro:bit. You will use the example
-broadcast sender programs to test your receiver program.
+broadcast sender program to test your receiver program.
 
 When writing your receiver programs, there are two questions you need to
 think about.
 
-1. Which blocks in the JavaScript Blocks editor do you need to use to receive a radio message?
+1. What function in Python do you need to use to receive a radio message?
 
-2. Using these blocks, can you receive any type of message, for
+2. Will this function allow you to receive any type of message, for
     example, a number or a string?
 
 **Instruction:** First, you will start by programming micro:bits to
-receive a number. Download *SendNumber.hex* in this folder
+receive a number. Download *SendNumberOrString.hex* in this folder
 into your sender micro:bit. This sender program uses the radio group 0
 to broadcast and sends a number between 0 and 9, whenever button A is
 pressed. Program your micro:bit to receive and display a number. Test
 your program using the sender micro:bit.
 
-Second, you will program your micro:bit to receive a string. Download
-*SendString.hex* under this folder into your sender micro:bit.
-This program also uses radio group 0, and sends a string,
-whenever button A is pressed. Program your micro:bit to receive and
+Second, you will program your micro:bit to receive a string.
+For this use the same program *SendNumberOrString.hex*.
+This program sends a string,
+whenever button B is pressed. Program your micro:bit to receive and
 display this string. Test your program using the sender micro:bit.
 What did you receive?
 
