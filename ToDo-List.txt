@@ -2,8 +2,7 @@
 2. Update credits about/license.md
 4. Update editions in index.md when the online version of Python book becomes avavailable. 
 5. Update authors in index.md
-6. Jonathan - WiredCommunication: Test the pixel by pixel for faster thresholds
-7. Jonathan - WiredCommunication: Update markdown file to include the pixel by pixel communication as a Task. 
-8. Wired communication: Rename the py files accordingly with the new Task name (to match the other code files in the foder.) and move under code directory. Upload the hex files as well.
+6. Jonathan - WiredCommunication: Test the pixel by pixel for faster thresholds 
+7. Wired communication: Rename the py files accordingly with the new Task name (to match the other code files in the foder.) and move under code directory. Upload the hex files as well.
  
  
