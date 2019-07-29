@@ -2,8 +2,8 @@ from microbit import *
 
 x=0
 y=0
-one_threshold = 400
-zero_threshold = 150
+one_threshold = 100
+zero_threshold = 37.5
 
 while True:
     signal_time = None

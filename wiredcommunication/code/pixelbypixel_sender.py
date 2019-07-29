@@ -13,6 +13,7 @@ index=0
 while True:
     if button_a.is_pressed():
         display.show(Image.HEART)
+        sleep(2000)
         start = True
 
     if start:
@@ -20,12 +21,12 @@ while True:
         while(index < 25):
             if(heart[index]==1):
                 pin1.write_digital(1)
-                sleep(550)
+                sleep(137.5)
             else:
                 pin1.write_digital(1)
-                sleep(250)
+                sleep(62.5)
             pin1.write_digital(0)
-            sleep(100)
+            sleep(25)
             y=index//5
             x=index%5
             microbit.display.set_pixel(x, y, 0)
