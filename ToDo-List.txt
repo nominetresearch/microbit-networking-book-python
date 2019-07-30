@@ -1,7 +1,4 @@
 1. Complete about/acknowledgements. 
 2. Update credits about/license.md
-4. Update editions in index.md when the online version of Python book becomes avavailable. 
-5. Update authors in index.md
-6. Wired communication: Rename the py files accordingly with the new Task name (to match the other code files in the foder.) and move under code directory. Upload the hex files as well.
- 
- 
+3. Update editions in index.md when the online version of Python book becomes avavailable. 
+4. Update authors in index.md
