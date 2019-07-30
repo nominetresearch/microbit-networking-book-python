@@ -1,6 +1,6 @@
-# In this variation, your ships now use experimental mssiles which have a high chance of exploding midair
+# In this variation, your ships now use experimental missiles which have a high chance of exploding midair
 # If this happens you won't know whether your shot was going to hit or miss
-# To prevent that from happening each ship will find multiple shots in one go at the same coordinate so hopefully atleast one will land
+# To prevent that from happening each ship will fire multiple shots in one go at the same coordinate so hopefully atleast one will land
 # This uses the concept of retransmmisons from the previous chapter
 
 from microbit import *

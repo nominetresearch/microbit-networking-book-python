@@ -175,13 +175,13 @@ placed on the lower 4 rows of the display, like in the example figures.
 button was pressed to get the *column\_number*. When button B is
 pressed, it defines the *row\_number* for the same shot. Again,
 count the number of times to get the *row\_number*.
+An led can be turned on to display the currently selected coordinate.
 
 **Important:** If you do not press either button A or button B, the
-*column\_number=0* and *row\_number=0*. A shot with *row\_number=0* is a
-wasted shot because there cannot be any ships on that row.
+*column\_number=0* and *row\_number=1*.
 Also, make sure if either button is pressed more than four times, it shoud start counting again from 0. In other words, the button counters should
-increment  with each button press like this: 0, 1, 2, 3, 4, 0, 1, 2,
-3, 4.
+increment with each button press like this for the column counter: 0, 1, 2, 3, 4, 0, 1, 2,
+3, 4. Or like this for the row counter: 1, 2, 3, 4, 1, 2, 3, 4.
 
 Pressing both buttons together will send *column\_number* and
 *row\_number* over the radio to your opponent. Decide how to send this
@@ -189,9 +189,8 @@ message in a packet, and agree on this with your teammate if you are writing sep
 
 **Instruction:** Program the button presses for A, B, and A+B. The
 program piece for buttons A+B will send a radio message.
-
-Test the correctness of your code. Add a little test code so that when you fire, as well as sending a radio message,  it also lights up the LED at
-*column\_number* and *row\_number*. Use this to check that aiming is working correctly. This is just test code, so remove it once you're confident that it works.
+Have an led turn on to represent the current *column\_number* and *row\_number* so you can see which coordinate
+is being selected.
 
 ### Task 3: Receiving a shot
 
@@ -228,6 +227,9 @@ to read about the variations.
 
 !!! attention "Exercise 2"
 	Imagine a variant when it takes 3 hits to sink a ship instead of 1 hit. How would your program change? Do you need to make changes on the sender side or the receiver side? How similar is this to using default retransmissions in [Handling errors: Retransmissions](../retransmissions/retransmissions.md)?
+
+!!! attention "Exercise 3"
+	Another variation makes your ships use experimental missiles which have a high chance of exploding midair. If this happens you won't know whether your shot was going to hit or miss once it landed. Firing multiple shots (retransmissions) at the same coordinate will hopefully allow at least 1 missile to land. Have a go at designing and programming this yourself, you'll need to create a function that sends multiple shot messages  with each one having a chance of failing. You could use the top-middle led as a way of showing that all the shots you fired failed to land. Experiment with different chances of failure and with different amounts of missiles fired.
 
 Problems
 --------
