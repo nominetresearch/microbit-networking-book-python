@@ -122,8 +122,8 @@ Programming: Stop and Wait!
 ---------------------------
 
 To program the Stop-and-Wait ARQ protocol, you will work with a
-teammate. Like in [Handling Errors: Retransmisions](../retransmissions/retransmissions.md), you will use the
-custom *ErrorRadio* blocks to send messages with errors. The
+teammate. Like in [Handling Errors: Retransmisions](../retransmissions/retransmissions.md), you will use your
+custom *sendStringWithError* function to send messages with errors. The
 communication is unicast, so you will still use source and destination
 addresses in your messages. like you did in the
 [Unicast communication: One to One](../unicast/unicast.md). Do not forget that your receivers need
@@ -135,7 +135,7 @@ to check if the received messages are addressed to them!
 will decide what your data and ACK packets should look like.
 
 **Instruction:** Discuss what is the minimum information you should have
-in your packets. Create two string variables for data and ACK packets, using the Text blocks in the JavaScript Blocks editor.
+in your packets. Create two string variables for data and ACK packets.
 
 ### Task 2: Timeout and retransmission 
 
@@ -146,7 +146,7 @@ how long the timeout should be.
 
 **Instruction:** To do this task, you may either start from scratch or
 change your code from [Handling Errors: Retransmisions](../retransmissions/retransmissions.md) for the
-sender micro:bit. At the sender side, program how to wait for th ACK. In the *Basic* menu, the *pause* function will
+sender micro:bit. At the sender side, program how to wait for the ACK. The *sleep* function will
 be useful for the timeout mechanism. If your pause ends before you
 receive an acknowledgement, then you will retransmit the packet. If you
 receive the ACK before the pause ends, you will remember this information
