@@ -131,11 +131,11 @@ while True:
 		sleep(100)
 		pin1.write_digital(0)
 
-signal = pin2.read_digital()
-if signal == 1:
-	display.set_pixel(2,2,9)
-else: 
-	display.set_pixel(2,2,0)
+	signal = pin2.read_digital()
+	if signal == 1:
+		display.set_pixel(2,2,9)
+	else: 
+		display.set_pixel(2,2,0)
 ```
 !!! note ""
 	**Figure 3:** Telegraph program. Pressing button A sends a signal to the other side using Pin 1. The receiver micro:bit listens on Pin 2 to check if a signal is received. If there is a signal, it lights up the (2,2) pixel 
