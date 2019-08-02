@@ -6,7 +6,9 @@ import radio
 radio.on()
 
 while True:
-    # Searches for a message, and scrolls it once it has been received
+    # Listen for a message
     message = radio.receive()
-    if message is not None: # Displays message if one has been received
+    
+    # If message received, display
+    if message is not None: 
         display.scroll(message)

@@ -9,7 +9,8 @@ Introduction
 Wireless (radio) communication, for example WiFi and mobile phones, is a popular way to connect to the Internet. In [Communication over Wires](../wiredcommunication), you
 connected two micro:bits via wires. In this chapter, you will connect your micro:bits using the embedded radios in your micro:bit.
 
-Doing this, you will not only learn how to use your micro:bit’s radio but also, broadcast communication. Wireless communication is typically broadcast: one micro:bit can send messages to all micro:bits.
+Doing this, you will not only learn how to use your micro:bit’s radio but also, broadcast communication. Wireless communication is typically broadcast: one micro:bit can send messages to all micro:bits in its 
+communication range.
 
 In summary, this chapter covers:
 
@@ -56,8 +57,7 @@ not labeled with a *broadcast address*.
 
 In a micro:bit, the broadcast address can be configured by setting the
 group ID of micro:bit’s radio. All the micro:bits need to have the same
-group ID for the broadcast to work. You will experiment with
-broadcasting with micro:bits in the next section.
+group ID for the broadcast to work. 
 
 ### Further reading
 
@@ -100,9 +100,8 @@ wavelength[^1].
 !!! note ""
 	**Figure 2:** Wavelength
 
-
 Frequency and wavelength are related. The relationship between frequency
-and wavelength is given by a formula: 
+and wavelength is given by a formula:
 
 wavelength (meter) = Speed of light (meter/second)/Frequency (hertz)  
 
@@ -136,14 +135,28 @@ broadcast address. This is like tuning into the correct channel to
 receive a TV broadcast.
 
 **Instruction:** Program your receiver micro:bit to turn on its radio, to do this you'll first need to import the radio module:
+
 ```Python
 import radio
 ```
-By default the group ID is set to 0.
-This is the group ID used in the example broadcast sender programs [^2].
-See if you can work out how the radio's group ID could be changed and what numbers it could be changed to.
 
-If you need help, documentation on the radio module can be found here: 
+To turn on your radio, you need the following instruction:
+
+```Python
+radio.on()
+```
+
+The radio needs to be explicitly turned on since the radio draws power and takes up memory that you may otherwise need in your micro:bit programs.
+
+By default the group ID is set to 0. This is the group ID used in the example broadcast sender programs.
+
+To change the group ID, for instance to 5, you need the following instruction:
+
+```Python
+radio.config(group=5)
+```
+
+Look at the documentation on the radio module to figure out what other parameters you can configure for your radio with the `radio.config(**kwargs)` function:
 [https://microbit-micropython.readthedocs.io/en/latest/radio.html](https://microbit-micropython.readthedocs.io/en/latest/radio.html)
 
 ### Task 2: Receive a broadcast message
@@ -160,19 +173,13 @@ think about.
 2. Will this function allow you to receive any type of message, for
     example, a number or a string?
 
-**Instruction:** First, you will start by programming micro:bits to
-receive a number. Download *SendNumberOrString.hex* in this folder
+**Instruction:** First, you will program your micro:bit to receive a message.
+Download *SendNumberOrString.hex* in the code/ folder
 into your sender micro:bit. This sender program uses the radio group 0
-to broadcast and sends a number between 0 and 9, whenever button A is
-pressed. Program your micro:bit to receive and display a number. Test
-your program using the sender micro:bit.
-
-Second, you will program your micro:bit to receive a string.
-For this use the same program *SendNumberOrString.hex*.
-This program sends a string,
-whenever button B is pressed. Program your micro:bit to receive and
+to broadcast. It sends sends a number between 0 and 9, whenever button A is
+pressed and, it sends a string, whenever button B is pressed. 
+Program your micro:bit to receive and
 display this string. Test your program using the sender micro:bit.
-What did you receive?
 
 ### Task 3: Send a broadcast message
 
@@ -189,7 +196,7 @@ Extended activity
 -----------------
 
 !!! attention "Exercise 1"
-	Extend your program in Task 2 for receiving a string. Display a “Sad” face on your micro:bit’s display until you receive a “Hello” message. Then display a “Happy” face for 2 seconds.
+	Extend your programs so that you can send or receive. Send a "Hello" message when you shake your micro:bit. Display a “Sad” face on your micro:bit’s display until you receive a “Hello” message. Then display a “Happy” face for 2 seconds before switching back to "Sad" face. 
 
 !!! attention "Exercise 2"
 	Discuss some issues with broadcast communication. Is it always useful or necessary to send messages to everybody? What about privacy? Is this a problem that everybody receives all messages?
@@ -222,6 +229,3 @@ Resources
 
 [^1]: Image by Dicklyon (Richard F. Lyon) - Own work, CC BY-SA 3.0,
     <https://commons.wikimedia.org/w/index.php?curid=7184592>
-
-[^2]: If you are using your own programs to send a broadcast, you can
-    select the group ID as you like.

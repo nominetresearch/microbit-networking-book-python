@@ -2,3 +2,6 @@
 2. Update credits about/license.md
 3. Update editions in index.md when the online version of Python book becomes avavailable. 
 4. Update authors in index.md
+5. Update wiredcommunication.md so that Exercise 1 becomes a main task, and instructions are given for it. 
+6. Update all chapters so that there is a link for solutions.
+7. Broadcast: Add SendNumberOrString.py to the repository 
