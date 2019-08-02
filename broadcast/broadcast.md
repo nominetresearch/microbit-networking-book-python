@@ -6,22 +6,18 @@ Broadcast communication: One to All
 Introduction
 ------------
 
-Wireless (radio) communication, for example WiFi and mobile phones, is a
-popular way to connect to the Internet. In [Communication over Wires](../wiredcommunication), you
-connected two micro:bits via wires. In this chapter, you will connect
-your micro:bits using radios.
+Wireless (radio) communication, for example WiFi and mobile phones, is a popular way to connect to the Internet. In [Communication over Wires](../wiredcommunication), you
+connected two micro:bits via wires. In this chapter, you will connect your micro:bits using the embedded radios in your micro:bit.
 
-Doing this, you will not only learn how to use your micro:bit’s radio
-but also, broadcast communication. Wireless communication is typically
-broadcast: one micro:bit can send messages to all micro:bits. In
-summary, this chapter covers:
+Doing this, you will not only learn how to use your micro:bit’s radio but also, broadcast communication. Wireless communication is typically broadcast: one micro:bit can send messages to all micro:bits.
+
+In summary, this chapter covers:
 
 - *wireless* communication and how to configure the micro:bit radio
 
 - the concept of *broadcast* and *broadcast address*
 
-- receiving and sending different message types (for example, a number
-    or a string) using broadcast
+- receiving and sending different message types (for example, a number or a string) using broadcast
 
 - when broadcast is useful, and when it isn’t
 
