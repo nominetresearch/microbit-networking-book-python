@@ -1,0 +1,18 @@
+Reaction Game:
+
+Press A to start
+Perfrom gesture shown by the microbit:
+* 'A' - press button A
+* 'B' - press button B
+* 'L' - tilt microbit left
+* 'R' - tilt microbit right
+* 'S' - shake microbit
+Each player begins with 3 seconds per turn, perfroming a correct gesture will shorten your next turn by 0.25s
+If you run out of time on your turn you lose and yur opponent wins
+
+V2 differences:
+
+In this version performing the incorrect gesture on your turn will also cause you to lose
+e.g. pressing button A when you were supposed to tilt left
+In V1 the microbit would ignore any incorrect gestures
+Shake has been removed in this version as the microbit would often confuse the gesture with another
