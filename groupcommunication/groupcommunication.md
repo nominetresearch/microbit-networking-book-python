@@ -106,10 +106,10 @@ send and receive messages in your group. You will change these programs
 to count the number of messages you receive. This way, you will test
 whether you receive messages only from your group.
 
-**Instruction:** Write a sender program that sends a random number
-between 0 and 9, when you press the button A. Write a receiver program
-that increments a counter each time it receives a number. When you press
-the button A at the receiver, it displays the value of the counter. With
+**Instruction:** Use the SendNumberOrString.hex or your own code from
+the previous chapter [Broadcast communication:One to all](../broadcast/broadcast.md) to send numbers or strings. Write a receiver program
+that increments a `counter_number` each time it receives a number between 0-9, and increments a `counter_other` when it receives something else. When you press
+the button A at the receiver, it displays the value of both counters. With
 your group, test that you are receiving the correct number of messages.
 Test together with other groups that you are not receiving their
 messages.
