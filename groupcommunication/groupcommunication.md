@@ -6,34 +6,33 @@ Group communication: One to Many
 Introduction
 ------------
 
-In the previous chapter, you experimented with broadcast: sending
-messages to everybody. In this chapter, you will learn about sending a
-message so that it just goes to a smaller group of people. This is an
-activity that is best carried out with a large group of friends or class
+In the previous chapter, you experimented with broadcast: sending messages to everybody. In this chapter, you will learn about sending a
+message so that it goes to a smaller group of people. This is an activity that is best carried out with a large group of friends or class
 mates so that you can experiment with different groups and group sizes.
 
 Group communication (also known as multicast) is an interesting concept,
 and enables several of today’s Internet technologies. For
-example, it enables to send videos as fast as possible over the
-Internet. In this chapter, you will learn:
+example, using this technology,  videos can be sent faster over the
+Internet. 
+
+In this chapter, you will learn:
 
 - The concept of *group communication* and *group* or *multicast
     address*
-
 - When group communication is useful and when it isn’t
 
 ### What you’ll need
 
     2 micro:bits
     1 whiteboard/board
-    boardmarkers/post-it notes
+    Boardmarkers/post-it notes
     1 teammate
 
 Background
 ----------
 
-In the previous chapter, all micro:bits received messages from all the
-other micro:bits. This might have got confusing (or amusing!). Now,
+In the previous chapter, all micro:bits could receive messages from all the
+other micro:bits in their vicinity. This might have got confusing (or amusing). Now,
 let’s try limiting who you can send messages to and receive messages
 from. This is called group communication. Group communication is used in
 the Internet to send to many people at the same time. For example,
@@ -50,26 +49,31 @@ address*.
 	A group or multicast address is a special address
 	which says all devices in the group should receive this message.
 
-To set a group address (or group ID), you will again use the “radio set group”
-block under the Radio menu like in [Broadcast communication:One to all](../broadcast/broadcast.md). The main challenge of this chapter is creating the groups for communication. How do computers learn about and join these groups?
-What happens when they leave a group? In this chapter, you will have a chance to think about these questions when you experiment with creating groups.
+To set a group address (or group ID), you will use
+the *group* parameter that can be set  in the `radio.config()`
+function.
+
+The main challenge of this chapter is creating the actual groups for communication. Think about how computers learn about and join these groups.
+What happens when a computer leaves a group? In this chapter, you will have a chance to think about these questions when you experiment with creating groups.
 
 ### **Further reading**
 
 When configuring group IDs for micro:bits, you will notice that the group IDs range from 0 to 255. This is the decimal (base 10) representation of group IDs. But we can also write these group IDs in binary (base 2). For the binary case, we will need 8 bits to get to a maximum group ID of 255.
 
 Let’s think about the binary representation of group IDs.
-The figure below shows an example for the group ID 172 in 8
-bits: 10101100. Notice that, we start reading bits from right to left.
-Each bit is numbered 1 to 8, corresponding to a power of two. The
-leftmost bit, bit 1, means $2^0 = 1$. Bit 2 means $2^1 = 2$ and we
+The figure below shows an example for the group ID 172 in 8 bits: 10101100. Notice that, we start reading bits from right to left. Each bit is numbered 1 to 8, corresponding to a power of two. The
+rightmost bit, bit 1, means $2^0 = 1$.
+Bit 2 means $2^1 = 2$ and we
 continue like this until we reach bit 8, which means $2^7 = 128$. Each
 bit location may contain either 0 or 1. To find the decimal value of
-10101100, we need to do some maths. For a bit location $x$, we multiply its
+10101100, we need to do some maths.
+For a bit location $x$, we multiply its
 bit value with $2^{x-1}$. For bit
 location 8, the bit value is 1, and we need to multiply $2^(8-1) =2^7=128$ with 1.
-After doing this for all bit locations, we add all the values we found.
-The result of this addition is 172. Now, check for the case 11111111. Is
+After doing this for all the bit locations, we add all the values we found.
+The result of this addition is 172.
+
+Now, check for the case 11111111. Is
 it really equal to 255? For further reading, see the BBC Bitesize,
 Binary revision page in the Resources section.
 
@@ -81,15 +85,13 @@ Binary revision page in the Resources section.
 Programming: Creating groups and messaging within groups
 --------------------------------------------------------
 
-In this chapter, you need to work together in pairs or small groups,
-with at least 2 micro:bits in each group. You will complete two tasks to
-program your micro:bits to send messages to and receive messages within
-your group.
+In this chapter, you need to work together in pairs or small groups with at least 2 micro:bits in each group. You will complete two tasks to
+program your micro:bits to send and receive messages within your group.
 
 ### Task 1: Create groups
 
 **Description:** In this task, you will choose a unique group ID for
-your group, and configure your radios with this group ID. When
+your group and configure your radios with this group ID. When
 choosing group IDs, you have to think about the best way to choose
 this number. **Hint: What would happen if two groups choose the same
 number, and how would you make sure that doesn’t happen?**
@@ -99,10 +101,10 @@ ID. Make sure your group ID is not the same as any other group ID
 
 ### Task 2: Send and receive messages
 
-**Description:** You will use the programs from the previous chapter to
-send and receive messages to your group. You will change these programs
+**Description:** You will use the programs from the previous chapter [Broadcast communication:One to all](../broadcast/broadcast.md) to
+send and receive messages in your group. You will change these programs
 to count the number of messages you receive. This way, you will test
-whether you receive messages that only come from your group.
+whether you receive messages only from your group.
 
 **Instruction:** Write a sender program that sends a random number
 between 0 and 9, when you press the button A. Write a receiver program
