@@ -11,7 +11,7 @@ while True:
     message = radio.receive()
     #Check if message is received
     if message is not None: 
-        try:
+        if number.isdigit():
             number = int(message)
             # Check if received a number  
             if(number>=0 and number <=9):
@@ -19,7 +19,7 @@ while True:
                 display.scroll(message)
             else:
                 counter_other += 1
-        except:
+        else:
             counter_other += 1
     
     # Note that if using the sender code from before, it will also count strings sent
