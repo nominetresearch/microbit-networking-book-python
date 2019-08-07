@@ -6,14 +6,10 @@ Unicast communication: One to One
 Introduction
 ------------
 
-Unicast, sending messages to a single receiver, is the typical way we
-communicate on the Internet. For example, to view a web page, we send
-unicast messages to a server, which in turn sends us the page to display
-on our browser.
+Unicast, sending messages to a single receiver, is how we typically communicate on the Internet. For example, to view a web page, we send messages to a server, which in turn sends us the page to display on our browser.
 
 In this chapter, you will send unicast messages, for example to a
-friend’s or teammate’s micro:bit. Doing this, you will learn some basic
-ideas of computer networking, including:
+friend’s or teammate’s micro:bit. Doing this, you will learn some core ideas of computer networking, including:
 
 - the concept of *unicast*
 
@@ -27,7 +23,7 @@ ideas of computer networking, including:
 
     2 micro:bits
     1 whiteboard/board
-    boardmarkers/post-it notes
+    Boardmarkers/post-it notes
     1 teammate
 
 Background
@@ -38,38 +34,32 @@ This chapter covers unicast communication. So, what is unicast?
 !!! hint "Definition 1: _Unicast_"
 	Transmission of a message to a single receiver.
 
-When transmitting messages to each other, computers use *protocols*.
+To understand how we can enable unicast, we will first
+look at how computers transmit messages to each other using *protocols*.
 
 !!! hint "Definition 2: _Protocol_"
 	A set of rules for how messages are sent across networks.
 
 Simply, protocols define how computers should send messages and what
-they should do when they receive a message. On the Internet, every
-computer or device follows the Internet Protocol (IP).
+they should do when they receive a message. So, we can use a protocol to say who the message is for.
 
-According to Internet Protocol, each device is given a unique *address*,
-called an *IP address*. Remember you have already used special addresses
-for broadcast and multicast. In this chapter, we consider unicast
-addresses. *IP address* is used for unicast on the Internet.
+This is exactly what is happening on the internet, where every
+computer or device follows the Internet Protocol (IP).
+According to Internet Protocol, each device is given a unique *address*, called an *IP address*. 
 
 !!! hint "Definition 3: _IP address_"
 	A unique string that identifies computers that use the
-	Internet Protocol  to communicate over a network. This string is made up
-	of 4 decimal numbers, that range between 0 and 255. Each decimal is
-	separated by dots. For example, 213.248.234.11 is an IP address.
+	Internet Protocol  to communicate over a network. This string is made up of 4 decimal numbers, that range between 0 and 255. Each decimal is separated by dots. For example, 213.248.234.11 is an IP address.
 
-Your micro:bit also has an address (but it is a bit different). You
-already partly changed your micro:bit’s address, by changing the group
-ID.
+*IP address* is used for unicast on the Internet.
+Remember, in the previous chapters, you used special addresses for broadcast and multicast. For this, you changed the group ID in your programs.  When you change the group ID, you partly change your micro:bit's address (although it is different than an IP address).
+Notice that, setting a group ID limits the group of micro:bits to receive messages from each other. If the group is limited to two micro:bits, then this enables unicast communication between them.
 
-When two computers communicate, the sender sends a data packet  to the
-receiver.
+But, what if we want each micro:bit to have its address (like the IP address) that we can send messages directly too. Then, in addition to the message we want to send, our micro:bit should also say who the message is for.  On the internet, when two computers communicate, the sender sends a data packet, which includes both the message and this type of information.
 
 !!! hint "Definition 4: _Data packet_" 
 	A data packet is a piece of data sent over a network.
-	This piece of data has an actual message part (for example, an image or
-	a text) and one or more header parts. A header contains helpful
-	information for protocols like the sender and receiver IP addresses.
+	This piece of data has an actual message part (for example, an image or a text) and one or more header parts. A header contains helpful information for protocols like the sender and receiver IP addresses.
 
 ![A data packet contains a message and a header. A header contains information to help a protocol such as sender and receiver addresses, and message types. Different protocols may add different headers to a message.](Datapacket.png)
 
@@ -77,36 +67,22 @@ receiver.
 	**Figure 1:** A data packet contains a message and a header. A header contains information to help a protocol such as sender and receiver addresses, and message types. Different protocols may add different headers to a message.
 
 The figure above shows how the data and one header forms a data
-packet. In this figure, as well as the sender and receiver addresses,
-the example header also includes a message type. Message type tells the
-receiver whether it is receiving, for example, a text or an image.
-Remember, in the previous chapters, your programmed your receivers to
-receive a specific type of message. If your packets contained a header
-with the message type, then it would be easier to write the receiver
-program.
+packet. In this figure, as well as the sender and receiver addresses, the example header also includes a message type. Message type tells the receiver whether it is receiving, for example, a text or an image. This helps the receiver micro:bit to decide, for example, how to display the message.
 
-In this chapter, to unicast to other micro:bits, you will create a data
-packet by adding a header with source and destination addresses.
+In this chapter, to unicast to other micro:bits, you will create a data packet by adding a header with source and destination addresses.
 
 Programming: Sending and receiving unicast messages
 ---------------------------------------------------
 
-In this section, you will program your micro:bits to send and receive
-unicast messages completing four tasks. To start with, you need two
-micro:bits.
+To program unicast communication, you will need to complete four tasks. To start with, you need two micro:bits.
 
-For unicast to work, your radio should receive all messages sent, but
-your program should read only the ones that are addressed to you. This
-is like seeing all the post coming into your house, but only opening the
-envelopes with your name on.
+For unicast to work, micro:bits should receive all messages sent, but the program should read only the ones that are addressed to the intended receiver. This is like seeing all the post coming into your house, but only opening the envelopes with your name on.
 
 ### Task 1: Configure your radio
 
-**Description:** To receive any packet, sent by anybody, you need to use
-broadcast as the underlying communication.
+**Description:** To receive any packet, sent by anybody, you need to use broadcast as the underlying communication.
 
-**Instruction:** Set your radio group ID to be unique like you did in
-[Broadcast Communication: One to All](../broadcast/broadcast.md).
+**Instruction:** Set your radio group ID to be unique like you did in [Broadcast Communication: One to All](../broadcast/broadcast.md).
 
 ### Task 2: Design your header
 
@@ -119,20 +95,15 @@ message before sending. The message header will include:
 
 For the message header, you will create a special string.
 
-**Instruction:** First construct the sender and receiver addresses. With
-your teammate, pick two-letter strings as micro:bit addresses. You need
-one address for your micro:bit, and one address for your teammate’s
-micro:bit. For example, you can use your initials: These are “CS” and
-“AK” for the authors of this book. **Important! Your addresses should be
-unique across all the addresses of micro:bits that are in the same room
+**Instruction:** First construct the sender and receiver addresses. With your teammate, pick two-letter strings as micro:bit addresses. You need one address for your micro:bit, and one address for your teammate’s micro:bit. For example, you can use your initials: These are “CS” and “AK” for the authors of this book. **Important! Your addresses should be unique across all the addresses of micro:bits that are in the same room
 with you.**
 
 Next, join the strings for sender and receiver addresses to create a
-header. 
+header.
 
 ### Task 3: Create your packet and send
 
-**Description:** Now it is time to create your packet, a header and a message form a packet. 
+**Description:** Now it is time to create your packet, a header and a message form a packet.
 Your final packet will have the following information:
 
 - sender address
@@ -141,8 +112,7 @@ Your final packet will have the following information:
 
 - your message
 
-**Instruction:** Pick a string as your message. For example: “Hello”.
-Join your message string with your header.
+**Instruction:** Pick a string as your message. For example: “Hello”. Join your message string with your header.
 
 Now, your sender micro:bit is ready to send unicast packets.
 
@@ -159,28 +129,17 @@ string is made up of:
 
 - Sender’s message: the rest of the string
 
-The receiver needs to use this information to decide which packets are
-for itself.
+The receiver needs to use this information to decide which packets are for itself.
 
-**Instruction:** Divide the received string into the *sender address*,
-*receiver address*, and *sender’s message* variables.
+**Instruction:** Divide the received string into the *sender address*, *receiver address*, and *sender’s message* variables.
 
-Check if the *receiver address* is equal to your micro:bit’s address. If
-it is, then your micro:bit is the rightful receiver. Display the sender
-address and the message on your display. If your micro:bit is not the
-receiver, be a good citizen, and ignore the message.
+Check if the *receiver address* is equal to your micro:bit’s address. If it is, then your micro:bit is the rightful receiver. Display the sender address and the message on your display. If your micro:bit is not the receiver, be a good citizen, and ignore the message.
 
 ### Challenge: Filter senders
 
-**Description:** Sometimes, you may not want to receive messages just
-from anybody. For this, you will write a program so that you only
-receive messages from two people you know. We will call this your
-*allow-list* (often referred to as a *whitelist*).
+**Description:** Sometimes, you may not want to receive messages just from anybody. For this, you will write a program so that you only receive messages from two people you know. We will call this your *allow-list* (often referred to as a *whitelist*).
 
-**Instruction:** Extend the receiver program to also check the *sender
-address* field in the header. Check whether this address is in your allow-list. If yes, display the sender address and the message. If not,
-ignore the message. Test your program with addresses in and out of your
-whitelist.
+**Instruction:** Extend the receiver program to also check the *sender address* field in the header. Check whether this address is in your allow-list. If yes, display the sender address and the message. If not, ignore the message. Test your program with addresses in and out of your whitelist.
 
 Extended activity
 -----------------
@@ -192,8 +151,7 @@ Extended activity
 	Did you try listening out for messages sent from other micro:bits in your class? How could your program achieve this? Is this the right thing to do? How might you protect your messages from others snooping?
 
 !!! attention "Exercise 3"
-	In this chapter, we have covered one way to do a unicast: Putting sender and receiver addresses in a data packet header. But there is another way. Remember [Group communication: one to many](../groupcommunication/groupcommunication.md). If you set your group to be
-	only for your pair of micro:bits, then this is like you are unicasting. To unicast like this, choose a unique group ID, like you did for group communication. Announce it on the board so that no one else uses it. Write programs for your pair of micro:bits that send and receive using this radio group ID. What are the limitations of doing unicast like this? **Hint: Think about how many possible group IDs there are. Would this be enough for everyone in the world who has a micro:bit?**
+	In this chapter, we have covered one way to do a unicast: Putting sender and receiver addresses in a data packet header. But there is another way. Remember [Group communication: one to many](../groupcommunication/groupcommunication.md). If you set your group to be only for your pair of micro:bits, then this is like you are unicasting. What are the limitations of doing unicast like this? **Hint: Think about how many possible group IDs there are. Would this be enough for everyone in the world who has a micro:bit?**
 
 Problems
 --------
