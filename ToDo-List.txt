@@ -15,4 +15,5 @@ Basic algorithm:
     . Wait randomly between PROBE_MIN and PROBE_MAX
     . If receives a response or receives another probe for the same address, back off. Start from step 1.
 . If nothing is received during this time, then claim address.
-9. ShakeyDonkey: Try to debug timing problems. 
+9. ShakeyDonkey: Try to debug timing problems better.
+10. Unicast - both codes do not check if the receiver is the intended receiver. Need to be fixed.  
