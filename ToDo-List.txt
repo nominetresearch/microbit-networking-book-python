@@ -8,10 +8,11 @@
 8. Group Communication: Implement Exercise using IETF RFC 3927 using link-local address selection. Group leaders set-up address, and invite others.
 Assumption: Common group for organisation. 
 Basic algorithm: 
-1. Select a random address addr between 1 and 255
-2. Pick a random 0 - PROBE_WAIT seconds.
-3. For   PROBE_NUM times
-    1. Ask if addr is taken
-    2. Wait randomly between PROBE_MIN and PROBE_MAX
-    3. If receives a response or receives another probe for the same address, back off. Start from step 1.
-4. If nothing is received during this time, then claim address. 
+. Select a random address addr between 1 and 255
+. Pick a random 0 - PROBE_WAIT seconds.
+. For   PROBE_NUM times
+    . Ask if addr is taken
+    . Wait randomly between PROBE_MIN and PROBE_MAX
+    . If receives a response or receives another probe for the same address, back off. Start from step 1.
+. If nothing is received during this time, then claim address.
+9. ShakeyDonkey: Try to debug timing problems. 
