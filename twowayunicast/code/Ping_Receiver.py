@@ -1,12 +1,11 @@
 from microbit import *
 import radio
 
-# Turns radio on - this must be stated in the code
+# Turn radio on 
 radio.on()
 
 # The line below can be used to change the radio group,
-# it is already set to 0 by default but can be reconfigured to a number from 0-255
-
+# it is set to 0 by default but can be reconfigured to 0-255
 #radio.config(group = 0)
 
 # Create the header
@@ -23,10 +22,12 @@ while True:
     incoming = radio.receive()
     if incoming is not None:
         if len(incoming) >= 4:
-            radio.send(packet)
-
             sender_address = incoming[0:2]
             receiver_address = incoming[2:4]
             sender_message = incoming[4:]
+
+            #need to do checks receiver check here
+            
+            radio.send(packet)
 
             incoming = ""

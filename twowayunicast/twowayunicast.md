@@ -10,9 +10,9 @@ In this chapter, you will learn about *bidirectional communication*:
 sending a message to another micro:bit and getting a response to
 your message. You will also learn about the Ping program, which is a
 commonly used tool to check if computers are still connected to the
-Internet.
+internet.
 
-This chapter will build on the learnings from
+This chapter will build on the learnings from the previous chapter,
 [Unicast Communication: One to One](../unicast/unicast.md). The new ideas are:
 
 - The idea of 2-way communication (*bidirectional communication*)
@@ -25,7 +25,7 @@ This chapter will build on the learnings from
 
     2 micro:bits
     1 whiteboard/board
-    boardmarkers/postit notes
+    Boardmarkers/postit notes
     1 teammate
 
 Background
@@ -46,17 +46,18 @@ message, it waits for a certain response to its message.
 
 !!! hint "Definition 2: _Ping_"
 	Ping is an example of a two-way protocol. It is widely used in
-	the Internet to test whether a networked computer is on and connected OK.
+	the internet to test whether a networked computer is connected OK.
 
-Ping program sends a *Ping* message to test whether computers are OK. It
+Ping program sends a *Ping* message and
 expects this message to be echoed back, for example with a *Pong*
 message. This is like playing ping pong but with computers and over
 networks. If the sender does not receive a response to its *Ping*, this
-shows there is a problem with the receiver. It is also a problem if it
-takes a long time before the sender receives a *Pong* response.
+shows there is a problem with the receiver.
 
-So, Ping program measures the *round-trip-time* between the two
-computers to point out these problems.
+It is also a problem if it
+takes a long time before the sender receives a *Pong* response.
+To spot these problems, the Ping program measures the *round-trip-time* between the two
+computers.
 
 !!! hint "Definition 3: _Round-trip-time (RTT)_"
 	Round-trip-time is the time it takes for a
@@ -79,7 +80,7 @@ The figure below shows the relationship between,
 	between these two times, *Time\_receive* and *Time\_send* is the round-trip-time.
 
 Besides round-trip-time (RTT), the Ping program reports statistical
-information. Figure below shows an example output as a result of
+information. The figure below shows an example output as a result of
 using the command:
 
     ping www.google.com
@@ -98,33 +99,19 @@ The average RTT (shown as *avg*) is 10.184 ms.
 	The <http://ping.eu/ping> online program reports round-trip time and a 
 	statistical summary of the results.
 
-With a micro:bit, to calculate the round-trip-time of your messages, you
-will use the *running time* variable.
-
-!!! hint "Definition 3: _micro:bit running time_"
-	A variable that keeps record of how long has passed since the micro:bit was
-	turned on or reset (measured in milliseconds).
-
-In the rest of this chapter, you will use the running time variable to
-calculate the round-trip time. It will be very useful to record the time
+When programming your micro:bit, you
+will use the `running_time()` function to calculate the round-trip-time of your messages. This function returns the number of milliseconds since the micro:bit was last switched on. To calculate the round-trip time, you will need to record the time
 when you first sent a message, and also when you received a response.
-**Hint: Recording running time means setting a variable equal to the
-current running time. You can use this command to get the current running time of the microbit:**
-```Python
-running_time()
-```
 
 Programming: Ping
 -----------------
 
-This activity is best done with a team of two. You will together program
-your micro:bits to run the Ping program. For this, you will need to
-complete four tasks.
+This activity is best done with a team of two. To program the Ping program, you will need to complete five tasks.
 
 ### Task 1: Prepare for unicast
 
 **Description:** Ping uses unicast between the sender and the receiver
-micro:bits. Look at your notes for [Unicast Communication: One to One](../unicast/unicast.md)  and your
+micro:bits. Look at your notes for the previous chapter, [Unicast Communication: One to One](../unicast/unicast.md)  and your
 unicast program to remember how to do unicast.
 
 **Instruction:** Start with using the unicast program you have written for
@@ -138,7 +125,7 @@ Design your message header, *Ping* packet, and *Pong* packet.
 **Description:** The ping sender records the time before it sends out a
 *Ping* packet. It unicasts the *Ping* packet.
 
-**Instruction:** Use *running time* to record the *Ping* sending time.
+**Instruction:** Use `running_time()` to record the *Ping* sending time.
 Send a *Ping* packet to the receiver micro:bit.
 
 ### Task 3: Receive a Ping
@@ -152,13 +139,17 @@ packet when a *Ping* packet is received.
 ### Task 4: Receive a Pong and calculate round-trip-time
 
 **Description:** When the sender micro:bit receives the *Pong*, it
-calculates the round-trip-time. 
+calculates the round-trip-time.
 
 **Instruction:** Program the sender to
 receive a *Pong* packet. When the *Pong* is received, record the time
-using the running time variable. Show the difference between receiving
-and sending times on your display. Run your program 5 times, and write
-down the send times that you see in your display. Answer these two
+using `running_time()` function. Show the difference between receiving
+and sending times on your display. 
+
+### Task 5: Put everything together
+**Description:** Combine all the code you have written from Task 1 to Task 4, so that a single micro:bit can run the Ping program both as a Ping sender and a receiver.
+
+**Instruction:** Use one of your micro:bits to send a Ping 5 times, and write down the round-trip-times that you see in your display. Answer these two
 questions:
 
 1. What is the minimum and maximum round-trip-time (RTT)?
@@ -169,12 +160,12 @@ Exercises
 ---------
 
 !!! attention "Exercise 1"
-	Extend your Ping program to send automatically more than one *Ping* message. 
+	Extend your Ping program to send automatically more than one *Ping* message.
 	Test it with 10 *Pings*. Calculate the average round-trip time of these Ping messages.
 
 !!! attention "Exercise 2"
 	The Ping program reports the round-trip-time. What if you wanted to calculate 
-	the time the message took one-way? Is it possible to calculate one-way times? 
+	the time the message took one way? Is it possible to calculate one-way times? 
 	In other words, is it possible to calculate how long it takes to send a message 
 	from the sender to the receiver? How long the messages take from the receiver to the sender?
 

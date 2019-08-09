@@ -1,7 +1,7 @@
 from microbit import *
 import radio
 
-# Turns radio on - this must be stated in the code
+# Turn radio on
 radio.on()
 
 # The line below can be used to change the radio group,
@@ -24,7 +24,10 @@ while True:
         send_time = running_time()
         radio.send(packet)
 
-        # When a message is received, calculate and display the round trip time
+        # When a message is received, 
+        # calculate and display the round trip time
+
+        #The reception loop can be improved
         received = False
         while received == False:
             incoming = radio.receive()
@@ -32,6 +35,8 @@ while True:
                 if len(incoming) >= 4:
                     received = True
         
+        #need to do sender checks
+
         receive_time = running_time()
         round_trip_time = receive_time - send_time
 
