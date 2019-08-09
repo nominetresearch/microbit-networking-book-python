@@ -67,7 +67,8 @@ while True:
         # Once you have received your opponents choice, record what it it
         message = radio.receive()
         if message is not None:
-            if len(message) == 5 and message[:2] == their_address:
+            # TODO: Check if the message is for you 
+            if len(message) == 5 and message[:2] == their_address and message[2:4] == my_address:
                 if message[4] == "0":
                     opponent_hand = "paper"
                 elif message[4] == "1":
@@ -84,6 +85,7 @@ while True:
 
         # Displays the appropriate face depending on the outcome
         # After it has been displayed, the game resets for the next round
+        #TODO: Reduce the number of elif
         if received == True:
             if my_hand == opponent_hand:
                 display.show(Image.SURPRISED)
@@ -97,15 +99,7 @@ while True:
                 display.show(Image.HAPPY)
             elif my_hand == "spock" and (opponent_hand == "rock" or opponent_hand == "scissors"):
                 display.show(Image.HAPPY)
-            elif my_hand == "rock" and (opponent_hand == "paper" or opponent_hand == "spock"):
-                display.show(Image.SAD)
-            elif my_hand == "paper" and (opponent_hand == "scissors" or opponent_hand == "lizard"):
-                display.show(Image.SAD)
-            elif my_hand == "scissors" and (opponent_hand == "rock" or opponent_hand == "spock"):
-                display.show(Image.SAD)
-            elif my_hand == "lizard" and (opponent_hand == "rock" or opponent_hand == "scissors"):
-                display.show(Image.SAD)
-            elif my_hand == "spock" and (opponent_hand == "paper" or opponent_hand == "lizard"):
+            else:
                 display.show(Image.SAD)
 
             sleep(3000)

@@ -18,4 +18,5 @@ Basic algorithm:
 9. ShakeyDonkey: Try to debug timing problems better.
 10. Unicast - both codes do not check if the receiver is the intended receiver. Need to be fixed. 
 11. Two way unicast: Codes need to be fixed so intended receiver checks are done. Sender code can be improved for the radio.receive part. Merge all Ping_Receiver and Ping_sender code for a single program that can do the full Ping proram (send pings, respond to pings, calculate RTT)
-12. Two way unicast: Improve the program for Exercise 1 so that it starts with counter 10, on button press: count down, do ping, measure RTT, update statistics, if reached 0, display average, reset counter to 10. This way, it is possible to avoid too many while loops. This code also needs to do the Pong bit, and check senders as in comment 11.  
+12. Two way unicast: Improve the program for Exercise 1 so that it starts with counter 10, on button press: count down, do ping, measure RTT, update statistics, if reached 0, display average, reset counter to 10. This way, it is possible to avoid too many while loops. This code also needs to do the Pong bit, and check senders as in comment 11. 
+13. Rock paper scissors: improve code so that it makes use 0, 1, 2 as rock paper scissors, otherwise just send in text.  

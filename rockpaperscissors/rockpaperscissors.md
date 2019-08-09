@@ -6,8 +6,8 @@ Game 2: Rock, paper, scissors over the radio
 Introduction
 ------------
 
-Let’s play a game of rock, paper, scissors! Rock, paper and scissors is
-a game played with two players. Each player, at the same time, forms one
+Let’s play a game of rock, paper, scissors! This game is played with two players. 
+Each player, at the same time, forms one
 of the three shapes (rock, paper or scissor) with their hands. Then,
 they use these rules to decide who wins:
 
@@ -19,7 +19,7 @@ they use these rules to decide who wins:
 
 - If both players choose the same shape, it is a tie.
 
-Figure below shows these rules.
+The figure below shows these rules.
 
 ![Rock paper scissors game: Rock beats Scissors. Scissors beats Paper. Paper beats Rock.](Rock-paper-scissors.jpg)
 
@@ -38,8 +38,6 @@ so, you will practice:
 ### What you’ll need
 
     2 micro:bits
-    1 whiteboard/board
-    boardmarkers/postit notes
     1 teammate
 
 Programming: Rock, paper, scissors
@@ -65,16 +63,16 @@ scissors = Image("99009:99090:00900:99090:99009")
 
 while True:
     if accelerometer.was_gesture("shake"):
-        hand = random.randint(1,3)
-        if hand == 1:
+        hand = random.randint(0,2)
+        if hand == 0:
             display.show(paper)
-        elif hand == 2:
+        elif hand == 1:
             display.show(rock)
         else:
             display.show(scissors)
 ```
 Notice that the program gives a number to *rock*, *paper* and
-*scissors*. For example, paper=1, rock=2, and scissors=3.
+*scissors*. For example, paper=0, rock=1, and scissors=2.
 
 **Instruction:** Program the code shown above,
 and download it to your micro:bits. Play the game with a
@@ -83,16 +81,16 @@ decide who wins using the games rules as described above.
 
 ### Task 2: Hand shapes over the radio with unicast
 
-**Description:** To play the game over the radio, you will use the button A to select paper, rock or scissors.  You will use button B to confirm your
+**Description:** To play the game over the radio, you will use the button A to select either paper, rock or scissors.  You will use button B to confirm your
 selection and send it over the radio. Like in Task 1, use paper=0, rock=1, scissors=2.
 
 **Instruction:** Write a program to do the following:
 
-1. Use button A to select paper, rock or scissors. Each time you press button A, it should alternately show an icon of either paper, rock or scissors.
+1. Use button A to select paper, rock or scissors. Each time you press the button A, it should alternately show an icon of either paper, rock or scissors.
 
 2. Use button B to confirm your selection, and unicast it to your friend’s micro:bit over the radio like you did in [Unicast Communication: One to One](../unicast/unicast.md).
 
-3. Add code for receiving a number. When you receive a number, show the corresponding icon  on the display. For example, if you received 0, display the paper icon. 
+3. Add code for receiving a number. When you receive a number, show the corresponding icon on the display. For example, if you received 0, display the paper icon.
 
 Test with your teammate that you can send and receive your hand shape values over the radio.
 
@@ -125,65 +123,12 @@ program these rules in your code. Your program will:
 
 2. display a *happy* face if you won, a *sad* face if you lost. And if it’s a draw, show a *surprised* face.
 
-**Instruction:** The code below gives a glimpse on how to program the table.
-Note that this is just to give
-you an idea of the structure of your program. You will have to modify the code
-to do unicast communication (see [Unicast Communication: One to One](../unicast/unicast.md)).
-Make sure that your code is indented correctly and is inside a *while* loop where is needs to be.
+**Instruction:** Program the rules. Make sure that your code does unicast communication as described in chapter [Unicast Communication: One to One](../unicast/unicast.md)).
 
-You will notice in the code that we used two variables: *selected* and *received*.
-*selected* is set to *True* when you make the selection for your hand by pressing button B. *received* is set to *True* when you receive your opponent’s hand. In the *while* loop,
-the game is only played when both *selected* and *received* are *True*. Once you enter the block to play the game, these variables are initialized to *False* for the next round.
+**Hint:** You may need two variables in your code, so that the game is only played when both players selected their hand and received their opponent's choice. Let's call these variables: *selected* and *received*. *selected* is set to *True* when you press button B to make your selection. *received* is set to *True* when you receive your opponent’s hand. In your program, the game is only played when both *selected* and *received* are *True*. Once you play the game, these variables need to be set to *False* for the next round.
 
 After you program the game, play it with your teammate! Who
 wins more often?
-
-```Python
-if button_b.is_pressed():
-    if my_hand == "paper":
-        number = 0
-    elif my_hand == "rock":
-        number = 1
-    elif my_hand == "scissors":
-        number = 2
-
-    radio.send(str(number))
-    selected = True
-```
-```Python
-message = radio.receive()
-if message is not None:
-    if message == "0":
-        opponent_hand = "paper"
-    elif message == "1":
-        opponent_hand = "rock"
-    elif message == "2":
-        opponent_hand = "scissors"
-
-    message = None
-    received = True
-```
-```Python
-while True:
-    if received == True and selected == True:
-        if my_hand == opponent_hand:
-            display.show(Image.SURPRISED)
-        elif my_hand == "rock" and opponent_hand == "scissors":
-            display.show(Image.HAPPY)
-        elif my_hand == "scissors" and opponent_hand == "paper":
-            display.show(Image.HAPPY)
-        elif my_hand == "paper" and opponent_hand == "rock":
-            display.show(Image.HAPPY)
-        elif my_hand == "rock" and opponent_hand == "paper":
-            display.show(Image.SAD)
-        elif my_hand == "paper" and opponent_hand == "scissors":
-            display.show(Image.SAD)
-        elif my_hand == "scissors" and opponent_hand == "rock":
-            display.show(Image.SAD)
-
-        selected = False
-        received = False
-```
 	
 Exercises
 ---------
