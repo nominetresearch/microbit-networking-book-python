@@ -20,20 +20,21 @@ data_received = []
 while True:
     message = radio.receive()
     if message is not None:
-        if len(message) >= 5 and message[:2] == their_address:
+        if len(message) >= 5 and message[:2] == their_address and message[2:4] == my_address:
             data = message[4:]
 
             # There is a % chance for the acknowledgment not to be sent
+            # ToDo: Use send with Error function. 
             generated = random.randint(1, 100)
             if generated >= 25: # 75% chance of sending, 25% chance of not sending
                 radio.send(acknowledge_packet)
-                if data != "Start" and data != "End":
-                    data_received.append(data)
-                elif data == "End":
-                    data_uniques = list(dict.fromkeys(data_received))
-                    duplicates = len(data_received) - len(data_uniques)
-                    display.scroll(str(duplicates))
-
-                    data_received = []
+                
+            if data != "Start" and data != "End":
+                data_received.append(data)
+            elif data == "End":
+                data_uniques = list(dict.fromkeys(data_received))
+                duplicates = len(data_received) - len(data_uniques)
+                display.scroll(str(duplicates))
+                data_received = []
             
             message = None

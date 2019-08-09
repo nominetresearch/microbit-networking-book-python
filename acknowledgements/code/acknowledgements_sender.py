@@ -6,15 +6,15 @@ radio.on()
 
 # Sends a string with a % chance of failure
 # Returns whether the message was sent succesfully
-def sendStringWithError(string, chance):
+def sendWithError(message, error):
     generated = random.randint(1,100)
-    if generated <= chance:
+    if generated <= error:
         sent = True
     else:
         sent = False
 
     if sent == False:
-        radio.send(string)
+        radio.send(message)
 
     return sent
 
@@ -35,7 +35,6 @@ def ackWait(time):
 
     return received
 
-
 ### TASK 1 ###
 my_address = "JG"
 their_address = "CS"
@@ -44,24 +43,34 @@ header = my_address + their_address
 ### TASK 2 ###
 while True:
     # For each message sent, if no reply within 100ms the message is sent again
+    # Every retransmission is counted and displayed at the end
+    retransmissions = 0
     if button_a.is_pressed():
         while True:
             radio.send(header + "Start")
             response = ackWait(100)
             if response == True:
                 break
+            else:
+                retransmissions += 1
 
-        for digit in range(1, 11):
-            packet = header + str(digit)
+        for number in range(1, 6):
+            packet = header + str(number)
             while True:
-                #radio.send(packet)
-                sendStringWithError(packet, 50)
+                sendWithError(packet, 50)
                 response = ackWait(100)
                 if response == True:
                     break
+                else:
+                    retransmissions += 1
 
         while True:
             radio.send(header + "End")
             response = ackWait(100)
             if response == True:
                 break
+            else:
+                retransmissions += 1
+
+        display.scroll(str(retransmissions))
+

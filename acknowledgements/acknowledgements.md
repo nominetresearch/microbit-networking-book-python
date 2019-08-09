@@ -98,8 +98,8 @@ The figure below shows an example where the message from the sender is received,
 	ACK gets lost, so the sender retransmits the message.
 	
 These examples show that Stop-and-Wait ARQ handles data packet and ACK losses quite well. But,
-does it always work? Figure below shows a
-problem that can hapen when messages or ACKs are delayed. In other words,  timeouts end before ACKs can be received. In this example, when the sender sends the first "Hello", the receiver receives this message and send an ACK back. But the sender times out before it receives this ACK. So, it retransmits the second "Hello". Then, it receives the delayed ACK message. But what packet this ACK refer to? The first "Hello", or the second? This confuses the receiver as well! Is the second "Hello" a new packet, or a duplicate?
+does it always work? The figure below shows a
+problem that can hapen when messages or ACKs are delayed. In other words,  timeouts end before ACKs can be received. In this example, when the sender sends the first "Hello", the receiver receives this message and send an ACK back. But the sender times out before it receives this ACK. So, it retransmits the second "Hello". Then, it receives the delayed ACK message. But what packet does this ACK refer to? The first "Hello", or the second? This confuses the receiver as well! Is the second "Hello" a new packet, or a duplicate?
 
 ![Stop-and-Wait ARQ protocol: What happens if a message gets delayed? It's not clear which ACK refers to which message.](c9_Ack4.png)
 
@@ -123,7 +123,7 @@ Programming: Stop and Wait!
 
 To program the Stop-and-Wait ARQ protocol, you will work with a
 teammate. Like in [Handling Errors: Retransmisions](../retransmissions/retransmissions.md), you will use your
-custom *sendStringWithError* function to send messages with errors. The
+custom *sendWithError* function to send messages with errors. The
 communication is unicast, so you will still use source and destination
 addresses in your messages. like you did in the
 [Unicast communication: One to One](../unicast/unicast.md). Do not forget that your receivers need
@@ -134,7 +134,7 @@ to check if the received messages are addressed to them!
 **Description:** Before you can send and receive any packets, first you
 will decide what your data and ACK packets should look like.
 
-**Instruction:** Discuss what is the minimum information you should have
+**Instruction:** Discuss the minimum information you should have
 in your packets. Create two string variables for data and ACK packets.
 
 ### Task 2: Timeout and retransmission 
@@ -146,14 +146,15 @@ how long the timeout should be.
 
 **Instruction:** To do this task, you may either start from scratch or
 change your code from [Handling Errors: Retransmisions](../retransmissions/retransmissions.md) for the
-sender micro:bit. At the sender side, program how to wait for the ACK. The *sleep* function will
+sender micro:bit. At the sender side, program how to wait for the ACK. The *sleep()* function will
 be useful for the timeout mechanism. If your pause ends before you
 receive an acknowledgement, then you will retransmit the packet. If you
 receive the ACK before the pause ends, you will remember this information
 when the pause ends and will use it to send your next message.
 
 To test the program, you need to also program the receiver. The receiver
-sends the ACK packet for each data packet it receives.
+sends the ACK packet for each data packet it receives. 
+The ACK messages may be lost as well (so they should be sent using `sendWithError()` function).
 
 ### Task 3: Testing the reliability of Stop-and-Wait
 
@@ -161,7 +162,7 @@ sends the ACK packet for each data packet it receives.
 Stop-and-Wait protocol you programmed. For this, you will add a counter
 on the sender side to count the number of retransmissions. On the
 receiver side, you need a counter to understand the effect
-acknowledgements on retransmissions.
+acknowledgements have on retransmissions.
 
 **Instruction:** Decide on a timeout/pause time. Send five numbers to your teammate’s
 micro:bit using the Stop-and-Wait protocol. You will run the protocol
@@ -170,8 +171,8 @@ times.
 
 In the table below, retransmissions are the number of times a packet needed to
 be resent. Duplicates are the number of times the receiver received
-unnecessary retransmissions. So, let’s assume, at the end, the sender
-sent the following:
+unnecessary retransmissions. So, let’s assume, the sender ended up 
+sending the following:
 
        1 1 1 2 2 3 4 4 4 4 5 5
 
@@ -192,6 +193,9 @@ protocol is in handling errors.
 | 75 | 1 | | |
 | 75 | 2 | | |
 | 75 | 3 | | |
+
+Note that, since we are introducing errors artificially, retransmissions happen when packets get dropped at the sender, and duplicates are triggered when ACKs are dropped at the receiver.  
+
 
 Extended activity
 -----------------
