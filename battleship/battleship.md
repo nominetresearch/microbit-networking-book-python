@@ -20,7 +20,7 @@ Let's look at how this game works using the example board in the figure above.
 In this example, each player uses their own 10x10 board, and each player's fleet includes
 10 ships of different sizes (the grey rectangles). The figure shows the placement for one of the players: 4
 ships of size 2, 3 ships of size 3, 2 ships of size 4, and 1 ship of
-size 6. Arrangement ships is of course hidden from the opponent. Once both players have placed their ships
+size 6. Arrangement of the ships is of course hidden from the opponent. Once both players have placed their ships
 on their boards, they start guessing the position of (shooting at) their opponent's ships.
 In the example board, the crosses mark the shots of the opponent. Notice that some
 of these crosses did not hit any ships, and some of them did. The
@@ -63,18 +63,19 @@ Designing the Battleship for Microbit {#sec:design}
 ### How the game works
 
 Let’s start with going over the different pieces we need to program the
-Battleship. In the section above, you saw an example of the game, with a 10x10 board. 
+Battleship. In the section above, you saw an example of the game, with a 10x10 board.
 
 **Using the micro:bit display as a Battleship board:** Since micro:bit has a
 5x5 display, your battleship board needs to be smaller.
- This does not allow for many ships or big ones. So, your fleet will be 5 ships, each with a size just 1. 
+ This does not allow for many ships or big ones. So, your fleet will be 5 ships, each with a size just 1.
 
  When you fire a shot, you will need to know if it was a hit or a miss. So, we need to reserve the top row to display hits and misses. If your opponent's micro:bit says you had a
 hit, your micro:bit will light the leftmost LED. If it was an unfortunate
 miss, your micro:bit will light the rightmost LED.
 
 Since your micro:bit has a limited display, you won’t be able to show  your tries
-and misses in the display. Maybe, that's a memory challenge that can be added to the game, or you can keep a track of these with
+and misses in the display. Maybe, that's a memory challenge that can be added to the game, 
+or you can keep a track of these with
 paper like the children who played the game in earlier times?
 
 **Firing shots:** To fire shots, you will use the buttons. You will select a row and a
@@ -91,7 +92,7 @@ y is the row number. For more information, see
 Button A will be used to select the column number and button B will be
 used to select the row number. Then to fire a shot to (2,3), you will
 need to press button A twice, and press button B three times, and press both buttons A and button B together.  To check your understanding, discuss with your
-teammate you can send a shot to (0,4).
+teammate how you can send a shot to (0,4).
 
 When you press both buttons to fire a shot, your program will send a message to
 your opponent’s micro:bit. So, for example, if you want to fire a shot at (4,4), you will
@@ -131,7 +132,7 @@ the position (3,1) gets turned off, because this ship was sunk.
 Let’s also look at a miss situation (see
 the figure below). In this case, nothing should change on
 the opponent’s board. But, in the attacker’s display, in the top row,
-the rightmpst LED lights up to show a miss.
+the rightmost LED lights up to show a miss.
 
 ![Battleship game: An unfortunate miss!](Miss.jpg)
 
@@ -175,11 +176,12 @@ placed on the lower 4 rows of the display, like in the example figures.
 button was pressed to get the *column\_number*. When button B is
 pressed, it defines the *row\_number* for the same shot. Again,
 count the number of times to get the *row\_number*.
-An led can be turned on to display the currently selected coordinate.
+The LED for the currently selected coordinate can be turned on the display to confirm the selection visually.
 
 **Important:** If you do not press either button A or button B, the
 *column\_number=0* and *row\_number=1*.
-Also, make sure if either button is pressed more than four times, it shoud start counting again from 0. In other words, the button counters should
+Also, make sure if either button is pressed more than four times, it should start counting again from 
+their initial values. In other words, the button counters should
 increment with each button press like this for the column counter: 0, 1, 2, 3, 4, 0, 1, 2,
 3, 4. Or like this for the row counter: 1, 2, 3, 4, 1, 2, 3, 4.
 
@@ -189,7 +191,7 @@ message in a packet, and agree on this with your teammate if you are writing sep
 
 **Instruction:** Program the button presses for A, B, and A+B. The
 program piece for buttons A+B will send a radio message.
-Have an led turn on to represent the current *column\_number* and *row\_number* so you can see which coordinate
+Turn on the LED at *column\_number* and *row\_number* so you can see which coordinate
 is being selected.
 
 ### Task 3: Receiving a shot
@@ -214,7 +216,8 @@ smile!
 **Instruction:** If you receive a “Hit”, light the leftmost LED of the top row (the LED in (0,0) position). Update the count of your hits,
 and if you reached 5, display a smile! If the result was a “Miss”, light the rightmost LED of the top row (the LED in (4,0) position).
 
-Test your program(s) with your opponent. To start with, it'll be easier if you can see each other's screens. You might find it helpful to put in some test code, like you did for the previous task. For example, you could print out "hit" or "miss" when you receive and decode a shot. You might even find it helpful to print out the coordinates of the show when you receive the packet.
+Test your program(s) with your opponent. To start with, it'll be easier if you can see each other's screens. You might find it helpful to put in some test code like you did for the previous task. For example, you could print out "hit" or "miss" when you receive and decode a shot. You might even find it helpful to display the coordinates you
+received out from your opponent.
 
 Extended Activity
 -----------------
