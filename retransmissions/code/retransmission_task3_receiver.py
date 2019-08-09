@@ -10,15 +10,15 @@ their_address = "JG"
 while True:
     message = radio.receive()
     if message is not None:
-        if len(message) >= 5 and message[:2] == their_address:
+        if len(message) >= 5 and message[:2] == their_address and message[2:4] == my_address:
             data = message[4:]
 
-            # Create empty list when 'Start' is received
-            if data == "Start":
+            # Create empty list when 'S' is received
+            if data == "S":
                 packets_received = []
                 sleep(100)
-            # When 'End' is received calculate and display packet loss and information loss
-            elif data == "End":
+            # When 'E' is received calculate and display packet loss and information loss
+            elif data == "E":
                 packet_uniques = list(dict.fromkeys(packets_received)) # Removes duplicates from packets_received
                 packet_loss = (20 - len(packets_received)) / 20
                 information_loss = (10 - len(packet_uniques)) / 10

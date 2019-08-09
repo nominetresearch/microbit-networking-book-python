@@ -4,41 +4,16 @@ import radio
 
 radio.on()
 
-def sendNumberWithError(number, chance):
+#expects string to send
+def sendWithError(message, error):
     generated = random.randint(1,100)
-    if generated <= chance:
+    if generated <= error:
         sent = True
     else:
         sent = False
 
     if sent == False:
-        radio.send(str(number))
-
-    return sent
-
-# Sends a string with a % chance of failure
-# Returns whether the message was sent succesfully
-def sendStringWithError(string, chance):
-    generated = random.randint(1,100)
-    if generated <= chance:
-        sent = True
-    else:
-        sent = False
-
-    if sent == False:
-        radio.send(string)
-
-    return sent
-
-def sendValueWithError(string, number, chance):
-    generated = random.randint(1,100)
-    if generated <= chance:
-        sent = True
-    else:
-        sent = False
-
-    if sent == False:
-        radio.send(string + str(number))
+        radio.send(message)
 
     return sent
 
@@ -46,16 +21,16 @@ my_address = "JG"
 their_address = "CS"
 header = my_address + their_address
 
-# When A is pressed send 'start', 10 digits with error and then 'end'
+# When A is pressed send 'S', 10 numbers with error and then 'E'
 while True:
     if button_a.is_pressed():
-        radio.send(header + "Start")
+        radio.send(header + "S")
         sleep(100)
 
-        for digit in range(1, 11):
-            packet = header + str(digit)
-            sendStringWithError(packet, 20)
+        for number in range(1, 11):
+            packet = header + str(number)
+            sendWithError(packet, 20)
             sleep(100)
 
-        radio.send(header + "End")
+        radio.send(header + "E")
         sleep(100)

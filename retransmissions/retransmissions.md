@@ -7,16 +7,15 @@ Introduction
 ------------
 
 In the previous chapters, you probably noticed wireless communication isn’t always
-reliable. In other words, not every message you send may be received by
-the other side. In this chapter, you will learn about how to increase
-the chance your messages are received. What would you do if a message gets lost? This chapter will cover one
-simple but effective method: retransmissions.
+reliable. In other words, not every message you send may be received on
+the other side. In this chapter, you will learn about how to improve your chances.
+One simple but effective method is using retransmissions.
 
-In summary, you will learn about:
+In this chapter, you will learn about:
 
 - Wireless communication errors
 
-- *Retransmissions* as a method of reliability.
+- *Retransmissions* as a method of improving reliability.
 
 ### What you’ll need
 
@@ -29,13 +28,13 @@ Background
 In wireless communications, an error can occur for several reasons.
 For example, there may be physical obstructions, like walls, doors, and
 even people. The wireless signals lose power as they go through these
-obstructions and sometimes,  bounce off them!
+obstructions and sometimes,  bounce off them.
 The more obstructions there
 are between a sender and a receiver, the more chance there is of an
 error. Also, if the sender and receiver are too far away from each
 other, they may not always be able to communicate. Imagine there are
 many obstacles between two people, they may not always hear what the
-other is saying!
+other one is saying.
 
 Another reason for a wireless error may be *radio interference*. This is
 because wireless communication is broadcast (remember
@@ -61,7 +60,7 @@ this is a packet loss.
 *Packet loss* = (*Packets lost*)/(*Packets sent*)
 
 Also, if there is too much interference, you may receive messages
-incorrectly! For instance, you may hear “Bat!” when your friend is
+incorrectly. For instance, you may hear “Bat!” when your friend is
 shouting “Cat!”. In networking, this is a packet error. Packet errors are measured as packet error rates.
 
 !!! hint "Definition 3: _Packet error rate_"
@@ -76,22 +75,22 @@ chance of reception.
 !!! hint "Definition 4: _Retransmissions_"
 	Retransmissions mean sending messages many times.
 
-In the Figure below, let’s assume the sender knows that
+In the figure below, let’s assume the sender knows that
 the communications medium loses half of its packets. In other words, the
 packet loss is 0.5 (or 50%). The sender micro:bit decides to send each packet twice to
 increase the chance to get its messages through. The first packet is the
 transmission, and the second packet is the retransmission. So, the
 number of retransmissions is 1.
 
-![Retransmissions may increase message success. In the example, the sender sends each message twice by default. So, even if the first “Hello” failed, the second “Hello” was received by the receiver!](Retransmissions.png)
+![Retransmissions may increase message success. In the example, the sender sends each message twice by default. So, even if the first “Hello” failed, the second “Hello” was received by the receiver.](Retransmissions.png)
 
 !!! note ""
-	**Figure 1:** Retransmissions may increase message success. 
+	**Figure 1:** Retransmissions may increase message success.
 	In the example, the sender sends each message twice by default. So, even if 
-	the first “Hello” failed, the second “Hello” was received by the receiver!
+	the first “Hello” failed, the second “Hello” was received by the receiver.
 
 It is common to use retransmissions combined with another method. For
-instance, senders may choose retransmit only when they are sure there
+instance, senders may choose to retransmit only when they are sure there
 has been an error. We will explore this option in the next chapter,
 [Handling errors: Acknowledgements](../acknowledgements/acknowledgements.md).
 
@@ -107,38 +106,38 @@ experiments to measure how well retransmissions works.
 ### Task1: Create packet errors
 
 **Description:** In wireless communication, packets may fail randomly.
-This may make the testing your code for this chapter difficult. To test
-errors, you will use create a function to send messages with errors.
+This may make testing your code for this chapter difficult. To test
+errors, you will create a function to send messages with errors.
 
 ```Python
 import radio
 import random
 
-def sendStringWithError(string, chance):
+def sendWithError(message, error):
     generated = random.randint(1,100)
-    if generated <= chance:
-        sent = True
+    if generated <= error:
+        error = True
     else:
-        sent = False
+        error = False
 
-    if sent == False:
-        radio.send(string)
+    if error == False:
+        radio.send(message)
 
-    return sent
+    return error
 ```
 
-This function takes a string 'string' and an int 'chance' as inputs, and tries to send the string with
-a 'chance' percentage probability of failing.
-It can also return whether the message was correctly sent or not.
+This function takes two arguments: 'message' and 'error' value between 1-100.
+Then, it generates a random number, and compares it with 'error'.
+Only if the random values is larger than 'error', the message is sent.
+The function also returns whether the message was sent or not.
 
-**Instruction** Copy the code above into your own program, or construct your own function to send a message with a chance to fail.
+**Instruction** Copy the code above into your own program.
 With your teammate, decide who will have the sender micro:bit, and who will have the
 receiver micro:bit. Follow the approach in [Unicast Communication: One to One](../unicast/unicast.md)
 to put sender and receiver address in your packets.
 You may copy and
 change one of the programs you have written for
-[Unicast Communication: One to One](../unicast/unicast.md)
- to use the *ErrorRadio* blocks.
+[Unicast Communication: One to One](../unicast/unicast.md).
 
 Write a small sender program that sends a number with an error. Download it
 to the sender micro:bit. Write a small receiver program that receives a
@@ -155,12 +154,12 @@ to the receiver micro:bit.
 
 **Instruction:** Extend your program in Task 1, to send this sequence:
 
-    Start 1 2 3 4 5 6 7 8 9 10 End
+    S 1 2 3 4 5 6 7 8 9 10 E
 
-You can send the *Start* and *End* using the normal *radio.send()* function to
+In this sequence, 'S' signals the start of the sequence, and 'E' signals the end of the sequence.
+You can send the 'S' and 'E' using the normal *radio.send()* function to
 send them without an error. But remember that your micro:bit’s radio may
-drop messages. So, there may be errors even in sending *Start* and
-*End*. No radio is perfect!
+drop messages. So, there may be errors even in sending 'S' and 'E'. No radio is perfect!
 
 Extend the receiver program to count the number of messages it receives
 in this sequence. Run experiments setting the *error* parameter to 25,
@@ -169,9 +168,9 @@ the table below with the result of your experiments. For
 example, when *error* is set to 25 in experiment number 1, if you
 received:
 
-    Start 1 5 6 7 8 9 10 End
+    S 1 5 6 7 8 9 10 E
 
-This means, you received 7 packets, and lost 3. Your packet loss is 0.3%. The first row of the table is filled based on this example. Add in the values from your own experiment Based on your experiment results, discuss with your teammate how the experiment results change as you change the value  of *error*. 
+This means, you received 7 packets, and lost 3. Your packet loss is 30% (0.3). The first row of the table is filled based on this example. Add in the values from your own experiment Based on your experiment results, discuss with your teammate how the experiment results change as you change the value  of *error*.
 
 | **Error value** | **Experiment no.** | **Packets received**| **Packet loss** |
 |-----------------|:-------------------|:---------------|:-----------------|
@@ -197,16 +196,16 @@ number in your sequence more than once. To try out your code, set
 *error* to 75. For example, by setting number of retransmissions to 1,
 you will send the following sequence:
 
-    Start 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10End
+    S 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 E
 
 This means the sender sent 20 packets in total, including 10
 retransmissions.
 
-Change your receiver code to count the unique numbers received.  Count 
+Change your receiver code to count the unique numbers received.  Count
 also the duplicates. Calculate the packet loss. For example,
 let’s assume your receiver received, for the case of 1 retransmission:
 
-    Start 1 1 2 3 5 5 6 8 9 9 10 End
+    S 1 1 2 3 5 5 6 8 9 9 10 E
 
 This means, the receiver received 8 unique numbers (1, 2, 3, 5, 6, 8, 9 and 10) and 3 duplicates (1, 5 and 9). Note that the packet loss is 9 packets out of 20 (45%). But with retransmissions, the receiver only lost 2
 numbers out of 9 (it did not receive 4 and 7). Let’s call this improved
@@ -251,9 +250,9 @@ Problems
 
 3. If the packet error rate is 20% and the sender sent 40 packets, how many packets had errors?
 
-4. Assume you do not know how many numbers that will be in the message sequence. But, you know the numbers will start from 1, and will increment by 1. For example, the sent message sequence may be: *Start 1 2 3 4 5 6 7 8 9 10 11 12 End*. What happens if you lose *Start* or *End* messages? Which one is worse: the loss of *Start* or *End* message? If the only message you receive is a 4, what can you say about the number of messages you lost?
+4. Assume you do not know how many numbers that will be in the message sequence. But, you know the numbers will start from 1, and will increment by 1. For example, the sent message sequence may be: *S 1 2 3 4 5 6 7 8 9 10 11 12 E*. What happens if you lose 'S' or 'E' messages? Which one is worse: the loss of 'S' or 'E' message? If the only message you receive is a 4, what can you say about the number of messages you lost?
 
-5. Assume you do not know how many numbers that will be in the message sequence. And they do not follow any order. For example, the sent message sequence may be: *Start 3 5 10 2 End*. What happens if you lose *Start* or *End* messages in the sequence Which one is worse: the loss of *Start* or *End* message? If the only message you receive is a 5, what can you say about the number of messages you lost?
+5. Assume you do not know how many numbers that will be in the message sequence. And they do not follow any order. For example, the sent message sequence may be: *S 3 5 10 2 E*. What happens if you lose 'S' or 'E' messages in the sequence. Which one is worse: the loss of 'S' or 'E' message? If the only message you receive is a 5, what can you say about the number of messages you lost?
 
 Resources
 ---------

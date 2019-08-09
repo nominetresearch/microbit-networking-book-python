@@ -4,41 +4,16 @@ import radio
 
 radio.on()
 
-def sendNumberWithError(number, chance):
+#expects string to send
+def sendWithError(message, error):
     generated = random.randint(1,100)
-    if generated <= chance:
+    if generated <= error:
         sent = True
     else:
         sent = False
 
     if sent == False:
-        radio.send(str(number))
-
-    return sent
-
-# Sends a string with a % chance of failure
-# Returns whether the message was sent succesfully
-def sendStringWithError(string, chance):
-    generated = random.randint(1,100)
-    if generated <= chance:
-        sent = True
-    else:
-        sent = False
-
-    if sent == False:
-        radio.send(string)
-
-    return sent
-
-def sendValueWithError(string, number, chance):
-    generated = random.randint(1,100)
-    if generated <= chance:
-        sent = True
-    else:
-        sent = False
-
-    if sent == False:
-        radio.send(string + str(number))
+        radio.send(message)
 
     return sent
 
@@ -52,5 +27,5 @@ while True:
         number_chosen = random.randint(0, 9)
         packet = header + str(number_chosen)
         
-        sendStringWithError(packet, 20)
+        sendWithError(packet, 20)
         sleep(500)
