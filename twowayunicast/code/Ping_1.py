@@ -22,6 +22,8 @@ while True:
     if button_a.is_pressed():
         # Send message
         send_time = running_time()
+        message = "ping"
+        packet = header + message
         radio.send(packet)
 
         # When a message is received, 
@@ -32,14 +34,23 @@ while True:
         while received == False:
             incoming = radio.receive()
             if incoming is not None:
-                if len(incoming) >= 4:
+                if len(incoming) >= 4 and incoming[:2] == string_receiver and incoming[2:4] == string_sender:
                     received = True
-        
-        #need to do sender checks
 
         receive_time = running_time()
         round_trip_time = receive_time - send_time
 
         incoming = ""
         display.scroll(round_trip_time)
+
+    else:
+        # Checks for messages, any of length 4 or greater will be kept
+        incoming = radio.receive()
+        if incoming is not None:
+            if len(incoming) >= 4 and incoming[:2] == string_receiver and incoming[2:4] == string_sender:
+                message = "pong"
+                packet = header + message
+                radio.send(packet)
+
+                incoming = ""
             
