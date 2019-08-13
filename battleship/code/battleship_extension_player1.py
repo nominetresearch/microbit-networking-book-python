@@ -146,7 +146,7 @@ while True:
             display.set_pixel(2, 0, 9) # Turns on the middle pixel in the top row if all your shots failed
 
         elif message is not None:
-            if len(message) == 6 and message[:2] == their_address:
+            if len(message) == 6 and message[:2] == their_address and message[2:4] == my_address:
                 # Turns off the hit/miss/failed leds when your opponents shot is received
                 display.set_pixel(0, 0, 0)
                 display.set_pixel(2, 0, 0)
@@ -174,7 +174,7 @@ while True:
                 radio.on()
                 selected = False
 
-            elif len(message) == 5 and message[:2] == their_address:
+            elif len(message) == 5 and message[:2] == their_address and message[2:4] == my_address:
                 on_target = message[4]
                 if on_target == "H":
                     my_hits += 1
@@ -187,7 +187,7 @@ while True:
                     display.set_pixel(4, 0, 9)
 
             # If all your opponents shots failed, it's your turn
-            elif message[4:] == "FAIL" and message[:2] == their_address:
+            elif message[4:] == "FAIL" and message[:2] == their_address and message[2:4] == my_address:
                 display.set_pixel(0, 0, 0)
                 display.set_pixel(2, 0, 0)
                 display.set_pixel(4, 0, 0)

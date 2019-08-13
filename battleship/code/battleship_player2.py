@@ -129,7 +129,7 @@ while True:
             # Check to see if the message received was a shot your opponent fired, and if it is:
             # If it hit, remove ship from the display and tell them it was a hit
             # If it missed tell them it missed
-            if len(message) == 6 and message[:2] == their_address:
+            if len(message) == 6 and message[:2] == their_address and message[2:4] == my_address:
                 # Turns off the hit/miss leds when your opponents shot is received
                 display.set_pixel(0, 0, 0)
                 display.set_pixel(4, 0, 0)
@@ -157,7 +157,7 @@ while True:
             # Checks to see if the message was a hit/miss message, and if it is:
             # Turn on top left led for a hit, 5 hits and you win
             # Turns on top right led for a miss
-            elif len(message) == 5 and message[:2] == their_address:
+            elif len(message) == 5 and message[:2] == their_address and message[2:4] == my_address:
                 on_target = message[4]
                 if on_target == "H":
                     my_hits += 1
