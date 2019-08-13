@@ -29,7 +29,7 @@ while True:
     # Check for messages, any of length 4 or greater will be kept
     incoming = radio.receive()
     if incoming is not None:
-        if len(incoming) >= 4:
+        if len(incoming) >= 4 and incoming[2:4] == string_receiver:
             sender_address = incoming[0:2]
             receiver_address = incoming[2:4]
             sender_message = incoming[4:]
