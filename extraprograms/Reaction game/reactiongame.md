@@ -12,7 +12,7 @@ These programs can be challenging to code, so if you get stuck try sharing ideas
 
 Introduction
 ------------
-Here is a simple two player game that you can program for the micro:bit.
+Here is a simple two player game that you can program for the micro:bit inspired by the popular toy *Bop It*[^1].
 This game allows you to test your reaction time against a friend by performing
 actions that the micro:bit tells you to do.
 On your turn you'll be asked to complete the action displayed on the screen, which will be one of:
@@ -57,3 +57,5 @@ Extended Activity
         For a harder version of the game, each player should also lose if they perform the incorrect action on their turn.
         For example, you would lose if the micro:bit displayed 'A' and you pressed button B.
         Modify your code cause a player to lose if they perform the wrong action.
+
+[^1]: Bop It in Wikipedia: [https://en.wikipedia.org/wiki/Bop_It](https://en.wikipedia.org/wiki/Bop_It)
