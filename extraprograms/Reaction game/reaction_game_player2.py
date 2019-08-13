@@ -46,7 +46,7 @@ start = False
 while start == False:
     message = radio.receive()
     if message is not None:
-        if message[:2] == their_address and message[4:] == "START":
+        if message[:2] == their_address and message[2:4] == my_address and message[4:] == "START":
             start = True
     elif button_a.is_pressed():
         radio.send(header + "START")
@@ -89,8 +89,8 @@ while True:
     else:
         message = radio.receive()
         if message is not None:
-            if message[:2] == their_address and message[4:] == "SWITCH": # Change turns
+            if message[:2] == their_address and message[2:4] == my_address and message[4:] == "SWITCH": # Change turns
                 my_turn = True
-            elif message[:2] == their_address and message[4:] == "LOSE": # Win the game
+            elif message[:2] == their_address and message[2:4] == my_address and message[4:] == "LOSE": # Win the game
                 while True:
                     display.show(Image.HAPPY)

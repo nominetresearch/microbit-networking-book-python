@@ -179,7 +179,7 @@ while True:
         message = radio.receive()
         if message is not None:
             # If ball is received, then display and switch
-            if message[:2] == their_address and message[4] == "B":
+            if message[:2] == their_address and message[2:4] == my_address and message[4] == "B":
                 if message[5] == "U":
                     up = True
                 else:
@@ -192,7 +192,7 @@ while True:
                 my_side = True
             
             # Gain a point if opponent missed the ball
-            elif message[:2] == their_address and message[4] == "P":
+            elif message[:2] == their_address and message[2:4] == my_address and message[4] == "P":
                 my_score += 1
                 display.clear()
 
