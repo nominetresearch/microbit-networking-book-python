@@ -6,22 +6,29 @@ Preface
 About the book
 ------------------------------------
 
-This book is the python edition of the "Networking with Micro:bit Book", and presents a series of activities to teach the basics of computer networks. 
-Each chapter presents interesting challenges in radio communication[^1] and networking with micro:bits.
+This book is the Python edition of the "Networking with Micro:bit Book", 
+and presents a series of activities to teach the basics of computer networks. 
+Each chapter introduces interesting challenges in radio communication[^1] and networking with micro:bits.
 After every few chapters, there’s an exciting game to look forward to!
-In the programming sections, you will use MicroPython. For
-this, you can use either use the  Python Editor at the Microbit Educational Website ([python.microbit.org](https://python.microbit.org/)), the Mu editor
+
+In this version of the book, you will MicroPython for programming your micro:bits. For
+this, you can use either use the  Python Editor at the Microbit Educational Website 
+([python.microbit.org](https://python.microbit.org/)), the Mu editor
 ([https://codewith.mu/](https://codewith.mu/)), or the [MicroPython IDE for
 VSCode](https://marketplace.visualstudio.com/items?itemName=dphans.micropython-ide-vscode)).
 
-Writing this book, we have assumed no knowledge of radio communications or networking. However, we expect that you have written programs for the micro:bit. To be able to do the activities in
-this book, it will help to be familiar with variables, if-then-else statements, and loops. The activities in each chapter will provide ample opportunity to put your programming knowledge into practice.
+Writing this book, we have assumed no knowledge of radio communications or networking. 
+However, we expect that you have written programs for the micro:bit. To be able to do the activities in
+this book, it will help to be familiar with variables, if-then-else statements, and loops. 
+The activities in each chapter will provide ample opportunity to put your programming knowledge into practice.
 
-Understanding how computers talk to each other is something that we think is important, which is why we wrote this book. We’ve enjoyed designing the tasks and challenges in the book, and we hope you
-do too.
+Understanding how computers talk to each other is something that we think is important, 
+which is why we wrote this book. We’ve enjoyed designing the tasks and challenges in the book, and we hope you do too.
 
 Editions
 --------
+
+The online edition of this book is available from the Nominet Research's website at ...
 
 The online edition of the Makecode version of this book is available from the Nominet Research's website at [https://microbit.nominetresearch.uk/networking-book-online/](https://microbit.nominetresearch.uk/networking-book-online/).
 A PDF version of the same book is available for [download](https://microbit.nominetresearch.uk/networking-book-pdf/networking_with_the_microbit.pdf)
@@ -30,7 +37,10 @@ You can get also buy a printed copy from [Amazon.co.uk](https://www.amazon.co.uk
 About the authors
 -----------------
 
-"Networking with the Micro:bit" was created by two researchers, Cigdem Sengul and Anthony Kirby.  
+"Networking with the Micro:bit" book was created by two researchers, Cigdem Sengul and Anthony Kirby.
+To create the Python version of this book, Jonathan Grout worked with Cigdem Sengul to carefully convert all activities to their 
+Micropython versions. 
+  
 This book was made possible by Nominet, the .uk DNS registry, which means it runs the part of the Internet that controls how names like
 [http://www.bbc.co.uk)](http://www.bbc.co.uk) are used over the Internet, when people, computers, or devices like tablets or smartphones try to connect to them.
 

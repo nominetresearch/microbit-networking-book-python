@@ -1,7 +1,7 @@
 1. Complete about/acknowledgements.- DONE.  
-2. Update credits about/license.md
-3. Update editions in index.md when the online version of Python book becomes avavailable. 
-4. Update authors in index.md
+2. Update credits about/license.md - DONE. 
+3. Update editions in index.md when the online version of Python book becomes available. - PUT A PLACEHOLDER FOR THE LINK 
+4. Update authors in index.md - DONE
 5. Update wiredcommunication.md so that Exercise 1 becomes a main task, and instructions are given for it. 
 6. Update all chapters so that there is a link for solutions.
 7. Broadcast: Add SendNumberOrString.py to the repository under the code folder
@@ -24,3 +24,5 @@ Basic algorithm:
 15. Acknowledgements: Test results look suspicious for duplicates, the IF condition for unique was in the wrong place. ACKs should be dropped with sendWithError function. Ack timeouts can be done better, the device can receive an interrupt when sleeping.
 16. Battleship game implementations need to be simplified 
 17. Add a referance to where the solutions can be found at the end of each md file
+18. Look at the new games and decide whether they are in a single chapter or not titled as "New Games"
+19. Depending on the decision for 18, update the index.md to link to the new chapters. 

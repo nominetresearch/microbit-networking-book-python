@@ -1,6 +1,6 @@
 &copy; Nominet 2019
 
-**Authors:** Cigdem Sengul and Anthony Kirby
+**Authors:** Cigdem Sengul, Anthony Kirby, and Jonathan Grout
 
 
 ![Creative Commons 4.0 BY SA](by-sa.svg) Nominet 2019
