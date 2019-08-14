@@ -1,4 +1,4 @@
-1. Complete about/acknowledgements. 
+1. Complete about/acknowledgements.- DONE.  
 2. Update credits about/license.md
 3. Update editions in index.md when the online version of Python book becomes avavailable. 
 4. Update authors in index.md
