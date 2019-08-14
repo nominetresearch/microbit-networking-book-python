@@ -212,6 +212,11 @@ Problems
 
 4. Is it easier to broadcast using wired or wireless communication? Why?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/broadcast/code
+
 Resources
 ---------
 

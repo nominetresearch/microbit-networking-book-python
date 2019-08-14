@@ -148,6 +148,11 @@ Problems
 
 4. What happens if you send your hand shape to the other player before they pick theirs? Will there be a problem? Could they cheat!?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/rockpaperscissors/code
+
 Resources
 ---------
 

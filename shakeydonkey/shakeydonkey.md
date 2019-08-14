@@ -146,5 +146,10 @@ Finally, let’s look at Part 4, in the last figure.
 
 * How would you make sure you win this game?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/shakeydonkey/code
+
 [^1]: This game is by David Whale. We thank him for allowing us to use
     it in this book.

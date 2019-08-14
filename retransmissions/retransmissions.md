@@ -254,6 +254,11 @@ Problems
 
 5. Assume you do not know how many numbers that will be in the message sequence. And they do not follow any order. For example, the sent message sequence may be: *S 3 5 10 2 E*. What happens if you lose 'S' or 'E' messages in the sequence. Which one is worse: the loss of 'S' or 'E' message? If the only message you receive is a 5, what can you say about the number of messages you lost?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/retransmissions/code
+
 Resources
 ---------
 

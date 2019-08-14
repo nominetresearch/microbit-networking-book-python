@@ -142,6 +142,11 @@ Problems
 
 4. “Compared to broadcast, the receivers in group communication receive more messages.” True or False?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/groupcommunication/code
+
 Resources
 ---------
 

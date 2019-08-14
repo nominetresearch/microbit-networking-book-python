@@ -220,6 +220,11 @@ Problems
 
 2. In the Stop-and-Wait ARQ protocol, if 10 packets are sent, how many acknowledgements are needed?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/acknowledgements/code
+
 Resources
 ---------
 

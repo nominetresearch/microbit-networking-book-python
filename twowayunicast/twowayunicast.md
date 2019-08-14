@@ -182,6 +182,11 @@ Problems
 
 5. In the example ping figure from the <http://ping.eu/ping> site, the packet loss 0% loss. What is the loss percentage, if 2 *Ping* messages were lost out of 5?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/twowayunicast/code
+
 Resources
 ---------
 

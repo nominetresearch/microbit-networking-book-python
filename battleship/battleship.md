@@ -265,6 +265,11 @@ Problems
 If you wanted to play this game with another opponent, what do you need
 to change in your program?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/battleship/code
+
 [^1]: Battleship in Wikipedia: [https://en.wikipedia.org/wiki/Battleship_(game)](https://en.wikipedia.org/wiki/Battleship_(game))
 
 [^2]: Online Battleship game 1: [https://battleship-game.org](https://battleship-game.org) and Online Battleship game 2: [http://www.mathplayground.com/battleship.html](http://www.mathplayground.com/battleship.html)

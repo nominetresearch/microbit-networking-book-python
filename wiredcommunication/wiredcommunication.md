@@ -196,6 +196,11 @@ Problems
 
 5. How are the bits in your program sent over the wire in your program?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/wiredcommunication/code
+
 Resources
 ---------
 

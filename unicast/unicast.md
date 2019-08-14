@@ -180,6 +180,11 @@ Problems
 
 5. How does the size of a data packet header affect the actual packet size? If your data packet size were 100 Bytes, and your header size were 10 Bytes, how big could your messages be? What happens if the header size increases to 50 Bytes?
 
+Solutions
+---------
+
+Solutions for this chapter can be found under microbit-networking-book-python/unicast/code
+
 Resources
 ---------
 
