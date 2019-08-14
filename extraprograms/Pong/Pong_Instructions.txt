@@ -1,0 +1,11 @@
+Pong:
+
+Based on the computer game pong
+Player 1 is on the left, player 2 is on the right. Works best if seated next to each other
+Player 1 serves first
+Pressing A serves the ball towards you
+Press A to move the bat up, and B to move the bat down
+Ball will move to opponent's microbit if it reaches the edge of the screen
+Opponent gains a point if you fail to hit the ball
+The loser of that round serves next
+First to 5 points wins
