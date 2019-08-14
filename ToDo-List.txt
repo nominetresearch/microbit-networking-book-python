@@ -23,6 +23,6 @@ Basic algorithm:
 14. Retransmissions: change code so that it uses simpler way to calculate things.  
 15. Acknowledgements: Test results look suspicious for duplicates, the IF condition for unique was in the wrong place. ACKs should be dropped with sendWithError function. Ack timeouts can be done better, the device can receive an interrupt when sleeping.- SHOULD BE DONE
 16. Battleship game implementations need to be simplified 
-17. Add a referance to where the solutions can be found at the end of each md file
+17. Add a referance to where the solutions can be found at the end of each md file - DONE
 18. Look at the new games and decide whether they are in a single chapter or not titled as "New Games"
 19. Depending on the decision for 18, update the index.md to link to the new chapters. 
