@@ -61,7 +61,6 @@ while True:
         # Once you have received your opponents choice, record what it it
         message = radio.receive()
         if message is not None:
-            #TODO: check if the message is for you
             if len(message) == 5 and message[:2] == their_address and message[2:4] == my_address:
                 if message[4] == "0":
                     opponent_hand = "paper"
