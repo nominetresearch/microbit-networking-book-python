@@ -8,7 +8,7 @@ About the book
 
 This book is the Python edition of the "Networking with Micro:bit Book", 
 and presents a series of activities to teach the basics of computer networks. 
-Each chapter introduces interesting challenges in radio communication[^1] and networking with micro:bits.
+Each chapter introduces interesting challenges in radio communication and networking with micro:bits.
 After every few chapters, there’s an exciting game to look forward to!
 
 In this version of the book, you will MicroPython for programming your micro:bits. For
@@ -88,8 +88,3 @@ Outline
     networking will help you along the way.
 
 Let’s start!
-
-[^1]: The CPU on the micro:bit is a Nordic Semiconductor nRF51822 and contains a built-in 2.4GHz radio module. This radio can be configured to run Bluetooth Low Energy
-(BLE) protocol but in this book, we will use the simpler micro:bit to micro:bit communication.
-
-
