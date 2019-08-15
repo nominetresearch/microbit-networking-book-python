@@ -1,2 +1,0 @@
-'RadioGroupCheck_1-255.hex' checks groups 1-255, the full range
-'RadioGroupCheck_1-4.hex' checks groups 1-4 only making it easier to test the program
