@@ -1,6 +1,7 @@
 from microbit import *
 import random
 import radio
+import utime
 
 radio.on()
 
@@ -19,20 +20,16 @@ def sendWithError(message, error):
     return sent
 
 ### TASK 2 ###
-# Every 5ms checks to see if an acknowledgment message has been recieved, up to 'time' ms
+# Checks to see if an acknowledgment message has been recieved, up to 'time' ms
 # Will return True if acknowledged or False if not
 def ackWait(time):
     received = False
-    time_passed = 0
-    while time_passed <= time and received == False:
+    start_time = utime.ticks_ms()
+    while utime.ticks_diff(utime.ticks_ms(), start_time) <= time and received == False:
         message = radio.receive()
-        if message is None:
-            time_passed += 5
-            sleep(5)
-        else:
-            if message[4:] == "ACK":
+        if message is not None:
+            if message[:2] == their_address and message[2:4] == my_address and message[4:] == "ACK":
                 received = True
-
     return received
 
 ### TASK 1 ###
