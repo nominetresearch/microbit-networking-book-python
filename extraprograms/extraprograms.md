@@ -1,18 +1,15 @@
-Preface
-=======
+Extra Programs
+==============
 
 These extra activities are intended as an extension to the other chapters.
 Unlike before, these activities will not provide a step by step guide on how to create the program.
 You should use your own knowledge gained from completing the other chapters to help you create the program.
 These programs can be challenging to code, so if you get stuck try sharing ideas and working together with a friend.
+There are two for you to try and program - the Reaction Game and Pong.
 
-Extra Programs: The Reaction Game
-=================================
+The Reaction Game
+-----------------
 
-![Reaction game image](chapter4.png)
-
-Introduction
-------------
 Here is a simple two player game that you can program for the micro:bit inspired by the popular toy *Bop It*[^1].
 This game allows you to test your reaction time against a friend by performing
 actions that the micro:bit tells you to do.
@@ -34,9 +31,6 @@ then you lose and your opponent wins.
     2 micro:bits
     1 teammate
 
-Programming: Playing The Reaction Game
---------------------------------------
-
 **Description:** You will be programming the reaction game as described above. Make sure to configure your
 radio to send unicast packets.
 
@@ -51,19 +45,16 @@ an action (Press A, press B, tilt left, tilt right or shake)
 down to a minimum of half a second. It will then be their opponents turn.
 7. If a player loses, display a sad face on their screen. Display a happy face on the screen of the winner.
 
-Extended Activity
------------------
+### Extended Activity
 
 !!! attention "Exercise 1"
         For a harder version of the game, each player should also lose if they perform the incorrect action on their turn.
         For example, you would lose if the micro:bit displayed 'A' and you pressed button B.
         Modify your code cause a player to lose if they perform the wrong action.
 
-Extra Programs: Pong
-====================
+Pong
+----
 
-Introduction
-------------
 In this activity you will be programming a two-player version of Pong played across two micro:bits.
 For those unfamiliar, Pong was one of the first ever videogames created in 1972[^2].
 It is a two-dimensional simulation of table tennis featuring two paddles (bats),
@@ -89,9 +80,6 @@ Each version will play identically but will require different code.
     2 micro:bits
     1 teammate
 
-Programming: Playing Pong
--------------------------
-
 **Description:** You will be programming Pong as described above. Make sure to configure your
 radio to send unicast packets. 
 Experiment with different update delays to find one that allows the program to be played fairly.
@@ -111,8 +99,7 @@ their opponent will gain a point. This ends the round.
 10. At the end of each round, clear the screen and display the score for two seconds. Then display the game again.
 11. When a player reaches 5 points, display a happy face on their screen and a sad face on their opponents.
 
-Extended Activity
------------------
+### Extended Activity
 
 !!! attention "Exercise 1"
         Discuss with a teammate the effects of changing the length of the paddle to one of length 1, 3, or 4.
@@ -120,7 +107,7 @@ Extended Activity
         would be shorter, the same or longer.
 
 Solutions
-=========
+---------
 
 Solutions for this chapter can be found under microbit-networking-book-python/extraprograms/code
 
