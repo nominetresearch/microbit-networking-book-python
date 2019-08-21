@@ -1,7 +1,4 @@
-1. Complete about/acknowledgements.- DONE.  
-2. Update credits about/license.md - DONE. 
-3. Update editions in index.md when the online version of Python book becomes available. - PUT A PLACEHOLDER FOR THE LINK 
-4. Update authors in index.md - DONE
+1. Update editions in index.md when the online version of Python book becomes available. - PUT A PLACEHOLDER FOR THE LINK 
 5. Update wiredcommunication.md so that Exercise 1 becomes a main task, and instructions are given for it. 
 6. Update all chapters so that there is a link for solutions. - DONE
 7. Broadcast: Add SendNumberOrString.py to the repository under the code folder - DONE
