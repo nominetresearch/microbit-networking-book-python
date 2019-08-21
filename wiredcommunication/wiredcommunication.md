@@ -20,7 +20,7 @@ connect two micro:bits. Doing this, you will learn:
 
 - the concept of a *network*
 
-### What you’ll need?
+### What will you need?
 
     2 micro:bits
     4 crocodile clip leads
@@ -75,7 +75,7 @@ mediums, we create networks.
 !!! hint "Definition 4: _Network_"
 	A computer network is a collection of computers or devices,
 	which are connected to communicate with each other. In a computer
-	network, there is at least two computers. Two or more networks can
+	network, there are at least two computers. Two or more networks can
 	connect to form a larger network: a network of networks. Internet is a massive network of networks!
 
 In this chapter, you will create a network of two micro:bits, connected via wires.
@@ -98,14 +98,14 @@ This activity is best done with a teammate. In the following, you will go throug
 ### Task 1: Connect your micro:bits and test telegraph
 
 **Description:** You will connect your micro:bits using wires, and use
-a program to check the connections. You can follow the instructions below, or there is a more detailed step-by-step instructions in the *Micro-bit telegraph activity*[^2] on the micro:bit website. We also created a video to show how your connections
+a program to check the connections. You can follow the instructions below, or there are more detailed step-by-step instructions in the *Micro-bit telegraph activity*[^2] on the micro:bit website. We also created a video to show how your connections
 and program should work in this activity.
 See the video at [Simple Heart Transfer](https://microbit.nominetresearch.uk/networking-book/simple_heart_transfer.html).
 
 **Instruction:**  Using crocodile clips, connect the 3V pin between the two micro:bits, and connect the GND pins. Then connect pin 1 on one micro:bit to pin 2, and vice-versa.  Be careful to get the crocodile clip connections right: two of the wires connect straight (3V-to-3V and GND-to-GND) but the other two cross over (1-to-2
 and 2-to-1).
 
-See the figure showing connections for an example, and look at the colours carefully (you don’t need to use the same colours of course, but they must make the same connections).
+See the figure showing connections for an example, and look at the colours carefully. You don’t need to use the same colours, of course, but they must make the same connections.
 
 ![Wiring micro:bits.Two of the wires connect straight(3V-to-3V and GND-to-GND) but the other two cross over (1-to-2 and 2-to-1).](Microbit_wired.png)
 
@@ -138,13 +138,13 @@ while True:
 
 1. Which input will the micro:bits react to in your program?
 
-2. How do the microbits send data to each other?
+2. How do the micro:bits send data to each other?
 
-3. **Hint: Do you think they should be sending each other the actual Heart
-    icon?**
+3. **Hint: Do you think they should be sending each other the Heart
+    icon as a whole?**
 
 **Instruction:** For question 1, look at the [Gestures section in the BBC Micro:bit MicroPython
-documentation](https://microbit-micropython.readthedocs.io/en/latest/tutorials/gestures.html). For question 2, use the example Telegraph program above. For question 3, here is another big hint. **Hint: Assume micro:bits knows that they will be transferring a Heart icon betweeen them.**
+documentation](https://microbit-micropython.readthedocs.io/en/latest/tutorials/gestures.html). For question 2, use the example Telegraph program above. For question 3, here is another big hint. **Hint: Assume micro:bits knows that they will be transferring a Heart icon between them.**
 
 Let's consider two micro:bits side by side. We will call the micro:bit on the left "Left Micro:bit", and the micro:bit on the right "Right Micro:bit:
 Program your Left Micro:bit so that:
@@ -153,7 +153,7 @@ Program your Left Micro:bit so that:
 
 2. When tilted over the Right Micro:bit, it sends a pulse to it over the correct pin.
 
-3. When the Left Micro:bit receives a pulse on its correct pin, it displays a heart icon .
+3. When the Left Micro:bit receives a pulse on its correct pin, it displays a heart icon.
 
 Program your Right Micro:bit so that:
 
@@ -175,37 +175,37 @@ Programming: Transfer any icon bit by bit
 
 ### Task 1: Program the Left Micro:bit as the sender
 
-**Description:** In this task, you will write a program for the sender. The sender will be your Left Micro:bit. On pressing button A, the sender displays the icon to send, and then signals the state of each pixel location to the receiver, the Right Micro:bit. It turns off the LED corresponding to the pixel sent.
+**Description:** In this task, you will write a program for the sender. The sender will be your Left Micro:bit. On pressing button A, the sender displays the icon to send and then signals the state of each pixel location to the receiver, the Right Micro:bit. It turns off the LED corresponding to the pixel sent.
 To do this task, you will need to think about the following questions:
 
-1. How do you represent the icon image as 1s and 0s? 1 means the LED is in the on state, and 0 means LED is in the off state. 
+1. How do you represent the icon image as 1s and 0s? 1 means the LED state is on, and 0 means the LED state is off.
 2. On pressing the button A, the sender should start sending the icon image. How do you decide which bit to send?
 3. If the bit to send is a 1, how do you signal this to the receiver? If the bit to send is a 0, how do you signal this to the receiver? 
 
-**Instruction:** Program your micro:bit so it sends an image icon bit-by-bit answering the questions above.  The most tricky bit is the question 3, which is a fundamental concept in digital communications. You may find several methods if you research "Line Coding". Get inspiration from them but we suggest that you keep the idea of transitioning pin1 from 1 to 0, as you did in the previous exercise. Receiving that transition signals to the receiver that it is receiving data from the sender. Now, you can send a long signal (keep pin1 on 1 a longer time) to send a 1, and a short signal to send a 0 (keep pin1 on 1 a shorter time). This way the receiver can differentiate separate 1s and 0s.  
+**Instruction:** Program your micro:bit, so it sends an image icon bit-by-bit answering the questions above.  The most tricky bit is question 3, which is a fundamental concept in digital communications. You may find several methods if you research "Line Coding". Get inspiration from them, but we suggest that you keep the idea of transitioning pin1 from 1 to 0, as you did in the previous exercise. Receiving that transition signals to the receiver that it is receiving data from the sender. Now, you can send a long signal (keep pin1 on 1 for a long time) to send a 1, and a short signal to send a 0 (keep pin1 on 1 for a short time). This way, the receiver can differentiate separate 1s and 0s.  
 
 ![Sending 1001 with the method explained below. 1's are sent as longer signals and 0's are sent as shorter signals.](Signal.png)
 
 !!! note ""
-	**Figure 5:** Sending 1001 with the method explained below. 1's are sent as longer signals and 0's are sent as shorter signals.
+	**Figure 5:** Sending 1001 with the method explained below. 1's are sent as longer signals, and 0's are sent as shorter signals.
 
 ### Task 2: Program the Right Micro:bit as the receiver
 
-**Description:** In this task, you will write a program for the receiver. The receiver will be your Right Micro:bit. On the receiver side, you will keep reading pin2 to understand whether you are receiving a signal or not. Based on the signal you received, you will decide which LED to turn on or keep off. At the receiver side, pressing button A, clears the display.
+**Description:** In this task, you will write a program for the receiver. The receiver will be your Right Micro:bit. On the receiver side, you will keep reading pin2 to understand whether you are receiving a signal or not. Based on the signal you received, you will decide which LED to turn on or keep off. At the receiver side, pressing button A clears the display.
 
 To do this task, you will need to think about the following questions:
 
 1. How do you detect whether you are receiving a data signal?
 2. How do you decide whether received data is for a 1 or a 0?
-3. How do you decide which pixel to turn on or keep of based on the received data?
+3. How do you decide which pixel to turn on or keep off based on the received data?
 
-**Instruction:** Program your micro:bit so it receives an image icon bit-by-bit, turning on the corresponding LED on its display.  The most tricky bit is the question 2,
+**Instruction:** Program your micro:bit, so it receives an image icon bit-by-bit, turning on the corresponding LED on its display.  The most tricky bit is question 2,
 and the receiving micro:bit needs to know what method the sender is using to send 1s and 0s. So, in our case, the receiver needs to check whether it is receiving a long signal or a short signal. You
-will need the `running_time()` function to calculate the duration of signals. This function returns the number of milliseconds since the micro:bit was last switched on. To calculate the duration of the signal, you will need to record the time difference between receiving a 1 and a 0 at pin2. If this time is long, then you must have received a 1. If this time is short, then you must have received a 0. **Hint:You do not need to match exact signal times. Just check whether the signal is longer than a threshold value to be accepted as a 1.**
+will need the `running_time()` function to calculate the duration of signals. This function returns the number of milliseconds since the micro:bit was last switched on. To calculate the length of the signal, you will need to record the time difference between receiving a 1 and a 0 at pin2. If this time is higher than a threshold value, you must have received a 1. If this time is short, you must have received a 0. **Hint: You do not need to match exact signal times. Just check whether the signal is longer than a threshold value to be accepted as a 1.**
 
-Now that you have sender and receiver programmed, test your code with different icons. 
+Now that you have sender and receiver programmed test your code with different icons.
 
-**Note:** If for some reason, there is a wire misconnection, the receiver may get out of sync. In this case, the sender wil be seding a bit, and the receiver will be turning on or keeping off the wrong LED. If this happens, just restart your receiver to reset to starting from the beginning. 
+**Note:** If for some reason, there is a wire misconnection, the receiver may get out of sync. In this case, the sender will be sending a bit, and the receiver will be turning on or keeping off the wrong LED. If this happens, just restart your receiver to reset everything. 
 
 Extended Activity
 -----------------
@@ -241,6 +241,6 @@ Resources
 
 - BBC Bitesize, Introducing Binary - <http://www.bbc.co.uk/education/guides/zwsbwmn/revision>
 
-[^1]: This image is by micro:bit Educational Foundation at [www.microbit.org](https://www.microbit.org).
+[^1]: This image is by the micro:bit Educational Foundation at [www.microbit.org](https://www.microbit.org).
 
 [^2]: Microbit telegraph activity <https://makecode.microbit.org/projects/telegraph/make>  
