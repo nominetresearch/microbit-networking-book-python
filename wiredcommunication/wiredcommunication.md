@@ -169,7 +169,7 @@ Programming: Transfer any icon bit by bit
 ![Bit-by-bit heart transfer. Left Micro:bit could have sent any icon with this method.](bit_by_bit_heart_transfer.jpeg)
 
 !!! note ""
-	**Figure 3:** Bit-by-bit heart transfer. Left Micro:bit, our sender, could have sent any icon with this method.
+	**Figure 4:** Bit-by-bit heart transfer. Left Micro:bit, our sender, could have sent any icon with this method.
 
 	Start this activity by watching the [Wired\_pixel\_by\_pixel\_heart.m4v](https://microbit.nominetresearch.uk/networking-book/pixel_heart_transfer.html). Notice that the icon image is made up of 5x5 pixels, and each pixel is either on or off. So, when the button A is pressed, the Left Micro:bit sends pixel state at each location to the Right Micro:bit. On receiving this state, the Right Micro:bit lights up the correct LED on its display, achieving a bit-by-bit image transfer. The figure and the video show the bit-by-bit transfer of a Heart icon, but you can transfer any image with this method.
 
@@ -187,7 +187,7 @@ To do this task, you will need to think about the following questions:
 ![Sending 1001 with the method explained below. 1's are sent as longer signals and 0's are sent as shorter signals.](Signal.png)
 
 !!! note ""
-	**Figure 4:** Sending 1001 with the method explained below. 1's are sent as longer signals and 0's are sent as shorter signals.
+	**Figure 5:** Sending 1001 with the method explained below. 1's are sent as longer signals and 0's are sent as shorter signals.
 
 ### Task 2: Program the Right Micro:bit as the receiver
 
