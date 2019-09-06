@@ -1,4 +1,6 @@
 # Extended Activity - Exercise 1:
+# Shake to send Hello
+# Sad face turns into Happy face on receiving Hello
 
 from microbit import *
 import radio
