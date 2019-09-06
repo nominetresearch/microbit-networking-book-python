@@ -6,12 +6,12 @@ Communication over Wires
 Introduction
 ------------
 
-Everything is connected nowadays! Computers and devices connect to each other to form networks. And these networks connect to
+Everything is connected nowadays! Computers and devices connect to form networks. Also, these networks connect to
 form the Internet. When we say *computers* or *devices*, these
 can be anything from a traditional laptop to a cellphone, to a washing machine, to a humidity sensor. Of course, it can also be
 your micro:bit. More and more, the Internet is becoming an *Internet of Things*.
 
-In this chapter, you will form your own network using wires to
+In this chapter, you will form your very own network using wires to
 connect two micro:bits. Doing this, you will learn:
 
 - the concept of a *communications medium*, and *signals*
@@ -107,7 +107,7 @@ and 2-to-1).
 
 See the figure showing connections for an example, and look at the colours carefully. You don’t need to use the same colours, of course, but they must make the same connections.
 
-![Wiring micro:bits.Two of the wires connect straight(3V-to-3V and GND-to-GND) but the other two cross over (1-to-2 and 2-to-1).](Microbit_wired.png)
+![Wiring micro:bits. Two of the wires connect straight(3V-to-3V and GND-to-GND) but the other two cross over (1-to-2 and 2-to-1).](Microbit_wired.png)
 
 !!! note ""
 	**Figure 2:** Wiring micro:bits. Two of the wires connect straight
@@ -184,7 +184,7 @@ To do this task, you will need to think about the following questions:
 
 **Instruction:** Program your micro:bit, so it sends an image icon bit-by-bit answering the questions above.  The most tricky bit is question 3, which is a fundamental concept in digital communications. You may find several methods if you research "Line Coding". Get inspiration from them, but we suggest that you keep the idea of transitioning pin1 from 1 to 0, as you did in the previous exercise. Receiving that transition signals to the receiver that it is receiving data from the sender. Now, you can send a long signal (keep pin1 on 1 for a long time) to send a 1, and a short signal to send a 0 (keep pin1 on 1 for a short time). This way, the receiver can differentiate separate 1s and 0s.  
 
-![Sending 1001 with the method explained below. 1's are sent as longer signals and 0's are sent as shorter signals.](Signal.png)
+![Sending 1001 with the method explained below. 1's are sent as longer signals, and 0's are sent as shorter signals.](Signal.png)
 
 !!! note ""
 	**Figure 5:** Sending 1001 with the method explained below. 1's are sent as longer signals, and 0's are sent as shorter signals.
@@ -205,7 +205,7 @@ will need the `running_time()` function to calculate the duration of signals. Th
 
 Now that you have sender and receiver programmed test your code with different icons.
 
-**Note:** If for some reason, there is a wire misconnection, the receiver may get out of sync. In this case, the sender will be sending a bit, and the receiver will be turning on or keeping off the wrong LED. If this happens, just restart your receiver to reset everything. 
+**Note:** If for some reason, there is a wire misconnection, the receiver may get out of sync. In this case, the sender will be sending a bit, and the receiver will be turning on or keeping off the wrong LED. If this happens, restart your receiver to reset everything.
 
 Extended Activity
 -----------------
