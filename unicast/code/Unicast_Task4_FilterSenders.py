@@ -21,7 +21,7 @@ packet = header + message
 radio.send(packet)
 
 # Allowed senders
-allowed_senders = ["CS", "AK"]
+allowed_senders = ["AK"]
 
 while True:
     # Checks for messages, any of length 4 or greater will be kept
@@ -30,7 +30,6 @@ while True:
         # Only display message if sender is allowed
         if len(incoming) >= 4 and incoming[2:4] == string_receiver and incoming[:2] in allowed_senders:
             sender_address = incoming[0:2]
-            receiver_address = incoming[2:4]
             sender_message = incoming[4:]
 
             display.scroll(sender_address)
