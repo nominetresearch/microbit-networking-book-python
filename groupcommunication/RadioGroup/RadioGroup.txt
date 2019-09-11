@@ -1,5 +1,0 @@
-'RadioGroupCheck_1-255.hex' checks groups 1-255, the full range
-'RadioGroupCheck_1-4.hex' checks groups 1-4 only making it easier to test the program
-
-'RadioGroupMaster' finds a group, and broadcasts the location when slaves are looking for it
-'RadioGroupSlave' searches for and connects to master's group
