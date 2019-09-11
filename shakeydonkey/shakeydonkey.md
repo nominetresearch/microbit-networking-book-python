@@ -11,8 +11,8 @@ game. If you have not already seen it, Shakey Donkey is a micro:bit game
 that uses the micro:bit's radio [^1].
 
 Shakey Donkey is played with two players, and it measures how fast you
-react to a Donkey appearing on your micro:bit's display. The game starts with
-shaking micro:bits. The moment your micro:bit displays a Donkey, you
+react to a donkey appearing on your micro:bit's display. The game starts with
+shaking micro:bits. The moment your micro:bit displays a donkey, you
 should shout “Donkey!” and shake your micro:bit to make it disappear. At
 the end, when you press the button A, if your micro:bit displays a happy
 face, you won!
