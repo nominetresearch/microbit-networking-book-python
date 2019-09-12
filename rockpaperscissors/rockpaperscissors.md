@@ -6,7 +6,7 @@ Game 2: Rock, paper, scissors over the radio
 Introduction
 ------------
 
-Let’s play a game of rock, paper, scissors! This game is played with two players. 
+Let’s play a game of rock, paper, scissors! This game is played with two players.
 Each player, at the same time, forms one
 of the three shapes (rock, paper or scissor) with their hands. Then,
 they use these rules to decide who wins:
@@ -151,7 +151,7 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found under microbit-networking-book-python/rockpaperscissors/code
+Solutions for this chapter can be found under [the GitHub Directory](/code).
 
 Resources
 ---------
