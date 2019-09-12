@@ -91,7 +91,7 @@ shown in the next figure. Add it to your code.
     if number is not None:
         if number.isdigit() == True:
             caught = running_time()
-            you += int(number)
+            you = int(number)
             display.show(donkey)
 ```
 !!! note ""
@@ -134,7 +134,7 @@ Next, let’s look at Part 3, in the third figure.
 
 * When you receive a number, you set the "caught" variable. What does the "caught" variable mean?
 
-* You also change the "you" variable by the "receivedNumber". What does the "you" variable track?
+* You also change the "you" variable to the "receivedNumber". What does the "you" variable track?
 
 Now, let’s look at both Parts 2 and 3.
 
@@ -149,7 +149,7 @@ Finally, let’s look at Part 4, in the last figure.
 Solutions
 ---------
 
-Solutions for this chapter can be found under microbit-networking-book-python/shakeydonkey/code
+Solutions for this chapter can be found under the [GitHub directory](/code)
 
 [^1]: This game is by David Whale. We thank him for allowing us to use
     it in this book.
