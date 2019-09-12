@@ -14,10 +14,10 @@ radio.on()
 me = "PI"
 receiver = "PO"
 #header: sender + receiver
-header = me + ping_receiver
+header = me + receiver
 
 while True:
-    if button_a.is_pressed():
+    if button_a.was_pressed():
         # Send message
         send_time = running_time()
         message = "ping"
@@ -35,7 +35,7 @@ while True:
                     round_trip_time = receive_time - send_time
                     display.scroll(round_trip_time)
                 #Check if message is ping
-                else if(incoming[4:]=="ping"):
+                elif(incoming[4:]=="ping"):
                     message = "pong"
                     packet = header + message
                     radio.send(packet)
