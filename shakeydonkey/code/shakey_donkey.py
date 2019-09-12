@@ -43,7 +43,6 @@ while True:
             display.show(Image.SAD)
         else:
             display.show(Image.HAPPY)
-        
         me = 0
         you = 0
         caught = 0
