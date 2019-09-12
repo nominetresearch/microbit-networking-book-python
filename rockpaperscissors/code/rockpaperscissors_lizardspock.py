@@ -5,14 +5,15 @@ import radio
 rock = Image("00000:09990:09990:09990:00000")
 paper = Image("99999:90009:90009:90009:99999")
 scissors = Image("99009:99090:00900:99090:99009")
-lizard = Image("00900:09990:09990:00900:00090")
-spock = Image("09090:09090:09990:09990:09990")
+lizard = Image("00900:09990:09990:00900:00090")
+spock = Image("09090:09090:09990:09990:09990")
 
 radio.on()
 
 # The line below can be used to change the radio group,
-# it is already set to 0 by default but can be reconfigured to a number from 0-255
-#radio.config(group = 0)
+# it is already set to 0 by default 
+# but can be reconfigured to a number from 0-255
+# radio.config(group = 0)
 
 # IMPORTANT 
 # Make sure that on one of the microbits, 
@@ -38,25 +39,25 @@ while True:
     # your selection
     if button_a.was_pressed():
         if not selected:
-            if current_image == "rock":
-                display.show(paper)
-                current_image = "paper"
+            if current_image == "rock":
+                display.show(paper)
+                current_image = "paper"
                 my_hand = 0
-            elif current_image == "paper":
-                display.show(scissors)
-                current_image = "scissors"
+            elif current_image == "paper":
+                display.show(scissors)
+                current_image = "scissors"
                 my_hand = 2
-            elif current_image == "scissors":
-                display.show(lizard)
-                current_image = "lizard"
+            elif current_image == "scissors":
+                display.show(lizard)
+                current_image = "lizard"
                 my_hand = 3
-            elif current_image == "lizard":
-                display.show(spock)
-                current_image = "spock"
+            elif current_image == "lizard":
+                display.show(spock)
+                current_image = "spock"
                 my_hand = 4
-            elif current_image == "spock":
-                display.show(rock)
-                current_image = "rock"
+            elif current_image == "spock":
+                display.show(rock)
+                current_image = "rock"
                 my_hand = 1
             sleep(500)
 
@@ -77,20 +78,20 @@ while True:
     # Displays the appropriate face depending on the outcome
     # After it has been displayed, the game resets for the next round
     if selected and received:
-        if my_hand == opponent_hand:
+        if my_hand == opponent_hand:
             display.show(Image.SURPRISED)
-        elif my_hand == 1 and (opponent_hand == 2 or opponent_hand == 3):
-            display.show(Image.HAPPY)
-        elif my_hand == 2 and (opponent_hand == 0 or opponent_hand == 3):
-            display.show(Image.HAPPY)
-        elif my_hand == 0 and (opponent_hand == 1 or opponent_hand == 4):
-            display.show(Image.HAPPY)
-        elif my_hand == 3 and (opponent_hand == 0 or opponent_hand == 4):
-            display.show(Image.HAPPY)
-        elif my_hand == 4 and (opponent_hand == 1 or opponent_hand == 2):
-            display.show(Image.HAPPY)
-        else:
-            display.show(Image.SAD)
+        elif my_hand == 1 and (opponent_hand == 2 or opponent_hand == 3):
+            display.show(Image.HAPPY)
+        elif my_hand == 2 and (opponent_hand == 0 or opponent_hand == 3):
+            display.show(Image.HAPPY)
+        elif my_hand == 0 and (opponent_hand == 1 or opponent_hand == 4):
+            display.show(Image.HAPPY)
+        elif my_hand == 3 and (opponent_hand == 0 or opponent_hand == 4):
+            display.show(Image.HAPPY)
+        elif my_hand == 4 and (opponent_hand == 1 or opponent_hand == 2):
+            display.show(Image.HAPPY)
+        else:
+            display.show(Image.SAD)
         selected = False
         received = False
         sleep(1000)   
