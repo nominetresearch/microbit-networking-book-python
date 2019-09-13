@@ -3,20 +3,13 @@ import random
 import radio
 
 radio.on()
-
-#expects string to send
+# Send a message with error
 def sendWithError(message, error):
-    generated = random.randint(1,100)
-    if generated <= error:
-        sent = True
-    else:
-        sent = False
-
-    if sent == False:
+    generated = random.randint(1, 100)
+    if generated > error:
         radio.send(message)
-
-    return sent
-
+        return True
+    return False
 
 my_address = "JG"
 their_address = "CS"
@@ -33,6 +26,5 @@ while True:
             for i in range(2):
                 sendWithError(packet, 75)
                 sleep(100)
-
         radio.send(header + "E")
         sleep(100)

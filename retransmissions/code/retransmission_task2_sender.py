@@ -4,18 +4,14 @@ import radio
 
 radio.on()
 
-#expects string to send
+# Send a message with error
 def sendWithError(message, error):
-    generated = random.randint(1,100)
-    if generated <= error:
-        sent = True
-    else:
-        sent = False
-
-    if sent == False:
+    generated = random.randint(1, 100)
+    if generated > error:
         radio.send(message)
+        return True
+    return False
 
-    return sent
 
 my_address = "JG"
 their_address = "CS"

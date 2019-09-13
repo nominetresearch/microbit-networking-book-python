@@ -114,37 +114,30 @@ import radio
 import random
 
 def sendWithError(message, error):
-    generated = random.randint(1,100)
-    if generated <= error:
-        error = True
-    else:
-        error = False
-
-    if error == False:
+    generated = random.randint(1, 100)
+    if generated > error:
         radio.send(message)
-
-    return error
+        return True
+    return False
 ```
 
 This function takes two arguments: 'message' and 'error' value between 1-100.
 Then, it generates a random number, and compares it with 'error'.
-Only if the random values is larger than 'error', the message is sent.
-The function also returns whether the message was sent or not.
+Only if the random value is larger than 'error', the message is sent.
+The function returns True if the message was sent and False, otherwise.
 
 **Instruction** Copy the code above into your own program.
 With your teammate, decide who will have the sender micro:bit, and who will have the
 receiver micro:bit. Follow the approach in [Unicast Communication: One to One](../unicast/unicast.md)
-to put sender and receiver address in your packets.
+to put sender and receiver addresses in your packets.
 You may copy and
 change one of the programs you have written for
 [Unicast Communication: One to One](../unicast/unicast.md).
 
-Write a small sender program that sends a number with an error. Download it
-to the sender micro:bit. Write a small receiver program that receives a
-number and displays it on screen. Download this program to the receiver
-micro:bit.
+Write a small sender program that sends a number with an error. Write a small receiver program that receives a
+number and displays it on screen.
 
-Change the packet error rate using these error values in your program:
+Experiment with these programs by changing the packet error rate using these error values in your program:
 0, 50 and 100. Test packet errors by observing the receiver display.
 
 ### Task 2: Send a sequence of messages
@@ -170,7 +163,7 @@ received:
 
     S 1 5 6 7 8 9 10 E
 
-This means, you received 7 packets, and lost 3. Your packet loss is 30% (0.3). The first row of the table is filled based on this example. Add in the values from your own experiment Based on your experiment results, discuss with your teammate how the experiment results change as you change the value  of *error*.
+This means, you received 7 packets, and lost 3. Your packet loss is 30% (0.3). The first row of the table is filled based on this example. Add in the values from your own experiment based on your experiment results. Discuss with your teammate how the experiment results change as you change the value  of the *error* variable.
 
 | **Error value** | **Experiment no.** | **Packets received**| **Packet loss** |
 |-----------------|:-------------------|:---------------|:-----------------|
@@ -209,8 +202,8 @@ let’s assume your receiver received, for the case of 1 retransmission:
 
 This means, the receiver received 8 unique numbers (1, 2, 3, 5, 6, 8, 9 and 10) and 3 duplicates (1, 5 and 9). Note that the packet loss is 9 packets out of 20 (45%). But with retransmissions, the receiver only lost 2
 numbers out of 9 (it did not receive 4 and 7). Let’s call this improved
-packet loss *information loss*. So, the information loss with
-retransmissions is 0.2. The first row of the table below is filled based on this example.
+packet loss, the *information loss*. So, the information loss with
+retransmissions is 2/10 or 0.2. The first row of the table below is filled based on this example.
 
 Run each experiment three times each, for different retransmission values and fill in the rest of the table.
 
@@ -234,7 +227,7 @@ Extended activity
 	Based on your experiments, discuss with your teammate how the increase in 
 	retransmissions helps. In your discussion, answer the following questions:
 	
-	- How does the infromation loss improve as you increase the number of retransmissions?
+	- How does the information loss improve as you increase the number of retransmissions?
 	- Does the method guarantee all messages are received at least once?
 	- How would you improve your method?
 
@@ -250,14 +243,14 @@ Problems
 
 3. If the packet error rate is 20% and the sender sent 40 packets, how many packets had errors?
 
-4. Assume you do not know how many numbers that will be in the message sequence. But, you know the numbers will start from 1, and will increment by 1. For example, the sent message sequence may be: *S 1 2 3 4 5 6 7 8 9 10 11 12 E*. What happens if you lose 'S' or 'E' messages? Which one is worse: the loss of 'S' or 'E' message? If the only message you receive is a 4, what can you say about the number of messages you lost?
+4. Assume you do not know how many numbers that will be in the message sequence. But, you know the numbers will start from 1, and will increment by 1. For example, the sent message sequence may be: *S 1 2 3 4 5 6 7 8 9 10 11 12 E*. What happens if you lose the 'S' or 'E'? Which one is worse: the loss of the 'S' or the 'E' message? If the only message you receive is a 4, what can you say about the number of messages you lost?
 
 5. Assume you do not know how many numbers that will be in the message sequence. And they do not follow any order. For example, the sent message sequence may be: *S 3 5 10 2 E*. What happens if you lose 'S' or 'E' messages in the sequence. Which one is worse: the loss of 'S' or 'E' message? If the only message you receive is a 5, what can you say about the number of messages you lost?
 
 Solutions
 ---------
 
-Solutions for this chapter can be found under microbit-networking-book-python/retransmissions/code
+Solutions for this chapter can be found under [the GitHub Directory](/code)
 
 Resources
 ---------
