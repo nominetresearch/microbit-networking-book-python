@@ -250,7 +250,8 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found under [the GitHub Directory](/code)
+Solutions for this chapter can be found under [the GitHub Directory](/code).
+You can find example test results in [ExampleTestResults.md](ExampleTestResults.md).
 
 Resources
 ---------

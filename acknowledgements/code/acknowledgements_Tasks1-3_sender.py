@@ -7,17 +7,14 @@ radio.on()
 
 # Sends a string with a % chance of failure
 # Returns whether the message was sent succesfully
+# Send a message with error
 def sendWithError(message, error):
-    generated = random.randint(1,100)
-    if generated <= error:
-        sent = True
-    else:
-        sent = False
-
-    if sent == False:
+    generated = random.randint(1, 100)
+    if generated > error:
         radio.send(message)
+        return True
+    return False
 
-    return sent
 
 ### TASK 2 ###
 # Checks to see if an acknowledgment message has been recieved, up to 'time' ms

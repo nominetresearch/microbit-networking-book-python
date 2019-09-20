@@ -27,7 +27,7 @@ Background
 
 In the previous chapter, a message was transmitted multiple times no
 matter if the receiver already received an earlier copy. This is
-wasteful! You could have been transmitting new information instead of
+wasteful for the sender! You could have been transmitting new information instead of
 repeating yourself. This is also wasteful for the receiver, which needs to
 keep discarding the duplicates.
 
@@ -39,7 +39,7 @@ To avoid this, we will introduce a new concept called
 	
 If the sender does not receive an acknowledgment, only then it should retransmit its message.
 
-But how long should the sender wait an acknowledgement? This is
+But how long should the sender wait for an acknowledgement? This is
 determined by a *timeout*.
 
 !!! hint "Definition 2: _Timeout_"
@@ -71,7 +71,7 @@ In its simplest form, an Automatic Repeat Request uses the
 	3. if timeout, goes to step 1
 	4. if ACK, gets a new packet, goes to step 1.
 
-In Stop-and-Wait protocol, the sender cannot send a new packet until it
+Notice that in the Stop-and-Wait protocol, the sender cannot send a new packet until it
 receives the acknowledgement for the previous one.
 
 The figure below shows an example of a successful retransmission. The sender sends "Hello" and the receiver responds with an ACK. The sender received the ACK before the timeout ends, so it knows the packet was received OK. Now, the sender can start sending another message.
@@ -89,7 +89,7 @@ Now let's look at some error cases. Figure below shows that the first message fr
 !!! note ""
 	**Figure 2:** Stop-and-Wait ARQ protocol: The message gets lost, so the sender retransmits it.
 
-The figure below shows an example where the message from the sender is received, but the ACK from the receiver is lost. Again, when the timout ends, the sender has not received an ACK. So, it retransmits its message. The receiver receives the duplicate message, and again, sends an ACK. This time the ACK succeeds and things can go as normal.
+The figure below shows an example where the message from the sender is received, but the ACK from the receiver is lost. Again, when the timout ends, the sender has not received an ACK. So, it retransmits its message. The receiver receives the message, and again, sends an ACK. This time the ACK succeeds and things can go as normal.
 
 ![Stop-and-Wait ARQ protocol: The message was received, but the ACK gets lost, so the sender retransmits the message.](c9_Ack3.png)
 
@@ -171,7 +171,10 @@ times.
 
 In the table below, retransmissions are the number of times a packet needed to
 be resent. Duplicates are the number of times the receiver received
-unnecessary retransmissions. So, let’s assume, the sender ended up 
+unnecessary retransmissions. 
+Note that, since we are introducing errors artificially, retransmissions happen when packets get dropped at the sender, and duplicates are triggered when ACKs are dropped at the receiver.  
+
+So, let’s assume, the sender ended up 
 sending the following:
 
        1 1 1 2 2 3 4 4 4 4 5 5
@@ -194,9 +197,6 @@ protocol is in handling errors.
 | 75 | 2 | | |
 | 75 | 3 | | |
 
-Note that, since we are introducing errors artificially, retransmissions happen when packets get dropped at the sender, and duplicates are triggered when ACKs are dropped at the receiver.  
-
-
 Extended activity
 -----------------
 
@@ -211,7 +211,7 @@ Extended activity
 
 !!! attention "Exercise 3"
 	Research the "Alternating Bit Protocol", which uses a 1-bit sequence number 
-	to help with the problems discussed in the figures.
+	to help with the problems discussed in the figures for error cases.
 
 Problems
 --------
@@ -223,7 +223,8 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found under microbit-networking-book-python/acknowledgements/code
+Solutions for this chapter can be found under [the Github Directory](/code).
+You can find example test results in [ExampleTestResults.md](ExampleTestResults.md).
 
 Resources
 ---------
