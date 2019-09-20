@@ -99,13 +99,13 @@ The figure below shows an example where the message from the sender is received,
 	
 These examples show that Stop-and-Wait ARQ handles data packet and ACK losses quite well. But,
 does it always work? The figure below shows a
-problem that can hapen when messages or ACKs are delayed. In other words,  timeouts end before ACKs can be received. In this example, when the sender sends the first "Hello", the receiver receives this message and send an ACK back. But the sender times out before it receives this ACK. So, it retransmits the second "Hello". Then, it receives the delayed ACK message. But what packet does this ACK refer to? The first "Hello", or the second? This confuses the receiver as well! Is the second "Hello" a new packet, or a duplicate?
+problem that can happen when messages or ACKs are delayed. In other words,  timeouts end before ACKs can be received. In this example, when the sender sends the first "Hello", the receiver receives this message and sends an ACK back. But the sender times out before it receives this ACK. So, it retransmits the second "Hello". Then, the sender receives the delayed ACK message. But what packet does this ACK refer to? The first "Hello", or the second?
 
 ![Stop-and-Wait ARQ protocol: What happens if a message gets delayed? It's not clear which ACK refers to which message.](c9_Ack4.png)
 
 !!! note ""
 	**Figure 4:** Stop-and-Wait ARQ protocol: What happens if a message gets 
-	delayed? It's not clear which ACK refers to which message.
+	delayed? It's not clear which message an ACK refers to.
 
  To solve this confusion, the protocol needs to use sequence numbers.
 
@@ -122,7 +122,7 @@ Programming: Stop and Wait!
 ---------------------------
 
 To program the Stop-and-Wait ARQ protocol, you will work with a
-teammate. Like in [Handling Errors: Retransmisions](../retransmissions/retransmissions.md), you will use your
+teammate. Like in [Handling Errors: Retransmissions](../retransmissions/retransmissions.md), you will use your
 custom *sendWithError* function to send messages with errors. The
 communication is unicast, so you will still use source and destination
 addresses in your messages. like you did in the
@@ -145,7 +145,7 @@ ACK or time out. The main decision you need to make is
 how long the timeout should be.
 
 **Instruction:** To do this task, you may either start from scratch or
-change your code from [Handling Errors: Retransmisions](../retransmissions/retransmissions.md) for the
+change your code from [Handling Errors: Retransmissions](../retransmissions/retransmissions.md) for the
 sender micro:bit. At the sender side, program how to wait for the ACK. The *sleep()* function will
 be useful for the timeout mechanism. If your pause ends before you
 receive an acknowledgement, then you will retransmit the packet. If you
