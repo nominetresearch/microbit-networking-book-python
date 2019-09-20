@@ -36,7 +36,6 @@ while True:
                 display.scroll(str(information_loss))
             # Otherwise append to packets_received
             else:
-                print(data)
                 packets_received[int(data)] += 1
                 sleep(100)
             message = None
