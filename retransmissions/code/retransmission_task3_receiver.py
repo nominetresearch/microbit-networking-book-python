@@ -16,20 +16,27 @@ while True:
             # Create empty list when 'S' is received
             if data == "S":
                 packets_received = []
+                for i in range(1, 12):
+                    packets_received.append(0)
                 sleep(100)
-            # When 'E' is received calculate and display packet loss and information loss
+            # When 'E' is received
+            # calculate and display packet loss and information loss
             elif data == "E":
-                packet_uniques = list(dict.fromkeys(packets_received)) # Removes duplicates from packets_received
-                packet_loss = (20 - len(packets_received)) / 20
-                information_loss = (10 - len(packet_uniques)) / 10
-
+                total_received = 0
+                information_received = 0
+                for i in range(1, 11):
+                    if(packets_received[i] > 0):
+                        information_received += 1
+                    total_received += packets_received[i]
+                packet_loss = (20 - total_received) / 20
+                information_loss = (10 - information_received) / 10
                 display.scroll(str(packet_loss))
-                display.show(Image.HEART) # This is just used as a breaker between packet_loss and information_loss
+                display.show(Image.HEART)
                 sleep(1000)
                 display.scroll(str(information_loss))
             # Otherwise append to packets_received
             else:
-                packets_received.append(data)
+                print(data)
+                packets_received[int(data)] += 1
                 sleep(100)
-
             message = None
