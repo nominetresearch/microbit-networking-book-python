@@ -103,12 +103,17 @@ while True:
         # if we have a submarine in that location:
         # remove it from our ship list
         # send "Hit"
+        # If they reached 5 hits, display sad face. Game Over
         # if the opponent missed:
         # send "Miss"
         else:
             index = int(incoming)
             if index in ship_positions:
                 ship_positions.remove(index)
+                their_hits += 1
                 radio.send("Hit")
+                if their_hits == 5:
+                    display.show(Image.SAD)
+                    show_ships = False
             else:
                 radio.send("Miss")
