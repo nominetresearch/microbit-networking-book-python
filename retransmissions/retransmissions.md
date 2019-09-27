@@ -29,11 +29,11 @@ In wireless communications, an error can occur for several reasons.
 For example, there may be physical obstructions, like walls, doors, and
 even people. The wireless signals lose power as they go through these
 obstructions and sometimes,  bounce off them.
-The more obstructions there
+The more obstacles there
 are between a sender and a receiver, the more chance there is of an
 error. Also, if the sender and receiver are too far away from each
 other, they may not always be able to communicate. Imagine there are
-many obstacles between two people, they may not always hear what the
+many obstacles between two people, they may not hear what the
 other one is saying.
 
 Another reason for a wireless error may be *radio interference*. This is
@@ -53,7 +53,7 @@ this is a packet loss.
 
 !!! hint "Definition 2: _Packet loss_"
 	Packet loss happens when one or more data packets
-	traveling in a computer network do not reach their destination. Packet
+	travelling in a computer network do not reach their destination. Packet
 	loss is measured as the ratio of packets lost and the packets sent (see
 	Equation below).
 
@@ -69,7 +69,7 @@ shouting “Cat!”. In networking, this is a packet error. Packet errors are me
 
 *Packet error rate* = (*Packets with errors*)(*Packets sent*)
 
-In this chapter, we will cover one simple method to handle these errors, *retransmissions*, where the sender automatically retransmits messages multiple times to increase the
+In this chapter, we will cover a straightforward method to handle these errors, *retransmissions*, where the sender automatically retransmits messages multiple times to increase the
 chance of reception.
 
 !!! hint "Definition 4: _Retransmissions_"
@@ -97,7 +97,7 @@ has been an error. We will explore this option in the next chapter,
 Programming: Retransmissions
 ----------------------------
 
-This activity is best done with a teammate. You will start with creating
+This activity is best done with a teammate. You will start by creating
 packet errors in Task 1, and then test different packet error rates in
 Task 2. In Task 3, you will program the retransmissions solution to
 handle these errors. In this task, you will also run a series of
@@ -107,7 +107,7 @@ experiments to measure how well retransmissions works.
 
 **Description:** In wireless communication, packets may fail randomly.
 This may make testing your code for this chapter difficult. To test
-errors, you will create a function to send messages with errors.
+communication errors, you will create a function to send messages with errors.
 
 ```Python
 import radio
@@ -122,7 +122,7 @@ def sendWithError(message, error):
 ```
 
 This function takes two arguments: 'message' and 'error' value between 1-100.
-Then, it generates a random number, and compares it with 'error'.
+Then, it generates a random number and compares it with 'error'.
 Only if the random value is larger than 'error', the message is sent.
 The function returns True if the message was sent and False, otherwise.
 
@@ -145,7 +145,7 @@ Experiment with these programs by changing the packet error rate using these err
 **Description:** In this section, you will send a sequence of messages
 to the receiver micro:bit.
 
-**Instruction:** Extend your program in Task 1, to send this sequence:
+**Instruction:** Extend your program in Task 1 to send this sequence:
 
     S 1 2 3 4 5 6 7 8 9 10 E
 
@@ -158,12 +158,12 @@ Extend the receiver program to count the number of messages it receives
 in this sequence. Run experiments setting the *error* parameter to 25,
 50, and 75. Calculate the packet loss using the Packet loss equation. Repeat each experiment three times. Fill
 the table below with the result of your experiments. For
-example, when *error* is set to 25 in experiment number 1, if you
+example, when the *error* value is set to 25 in experiment number 1 if you
 received:
 
     S 1 5 6 7 8 9 10 E
 
-This means, you received 7 packets, and lost 3. Your packet loss is 30% (0.3). The first row of the table is filled based on this example. Add in the values from your own experiment based on your experiment results. Discuss with your teammate how the experiment results change as you change the value  of the *error* variable.
+This means you received 7 packets and lost 3. Your packet loss is 30% (0.3). The first row of the table is filled based on this example. Add in the values from your own experiment based on your experiment results. Discuss with your teammate how the experiment results change as you change the value  of the *error* variable.
 
 | **Error value** | **Experiment no.** | **Packets received**| **Packet loss** |
 |-----------------|:-------------------|:---------------|:-----------------|
@@ -186,7 +186,7 @@ retransmissions at the sender side.
 
 **Instructions:** Change your sender code from Task 2 to send each
 number in your sequence more than once. To try out your code, set
-*error* to 75. For example, by setting number of retransmissions to 1,
+*error* to 75. For example, by setting the number of retransmissions to 1,
 you will send the following sequence:
 
     S 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 E
@@ -200,7 +200,7 @@ let’s assume your receiver received, for the case of 1 retransmission:
 
     S 1 1 2 3 5 5 6 8 9 9 10 E
 
-This means, the receiver received 8 unique numbers (1, 2, 3, 5, 6, 8, 9 and 10) and 3 duplicates (1, 5 and 9). Note that the packet loss is 9 packets out of 20 (45%). But with retransmissions, the receiver only lost 2
+This means the receiver received 8 unique numbers (1, 2, 3, 5, 6, 8, 9 and 10) and 3 duplicates (1, 5 and 9). Note that the packet loss is 9 packets out of 20 (45%). But with retransmissions, the receiver only lost 2
 numbers out of 9 (it did not receive 4 and 7). Let’s call this improved
 packet loss, the *information loss*. So, the information loss with
 retransmissions is 2/10 or 0.2. The first row of the table below is filled based on this example.
@@ -243,15 +243,15 @@ Problems
 
 3. If the packet error rate is 20% and the sender sent 40 packets, how many packets had errors?
 
-4. Assume you do not know how many numbers that will be in the message sequence. But, you know the numbers will start from 1, and will increment by 1. For example, the sent message sequence may be: *S 1 2 3 4 5 6 7 8 9 10 11 12 E*. What happens if you lose the 'S' or 'E'? Which one is worse: the loss of the 'S' or the 'E' message? If the only message you receive is a 4, what can you say about the number of messages you lost?
+4. Assume you do not know how many numbers will be in the message sequence. But, you know the numbers will start from 1 and will increment by 1. For example, the sent message sequence may be: *S 1 2 3 4 5 6 7 8 9 10 11 12 E*. What happens if you lose the 'S' or 'E'? Which one is worse: the loss of the 'S' or the 'E' message? If the only message you receive is a 4, what can you say about the number of messages you lost?
 
-5. Assume you do not know how many numbers that will be in the message sequence. And they do not follow any order. For example, the sent message sequence may be: *S 3 5 10 2 E*. What happens if you lose 'S' or 'E' messages in the sequence. Which one is worse: the loss of 'S' or 'E' message? If the only message you receive is a 5, what can you say about the number of messages you lost?
+5. Assume you do not know how many numbers will be in the message sequence. And they do not follow any order. For example, the sent message sequence may be *S 3 5 10 2 E*. What happens if you lose 'S' or 'E' messages in the sequence. Which one is worse: the loss of 'S' or 'E' message? If the only message you receive is a 5, what can you say about the number of messages you lost?
 
 Solutions
 ---------
 
 Solutions for this chapter can be found under [the GitHub Directory](/code).
-You can find example test results in [ExampleTestResults.md](ExampleTestResults.md).
+You can find the example test results in [ExampleTestResults.md](ExampleTestResults.md).
 
 Resources
 ---------
