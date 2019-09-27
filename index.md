@@ -57,7 +57,7 @@ Broadcasting  means one micro:bit will send messages to many other micro:bits. H
 
 - [**Group communication: One-to-many**](groupcommunication/groupcommunication.md)
     In this chapter, you will form small groups to send to and receive from a limited number of micro:bits. 
-Here, selecting a unique identifier for your group will be an interesting challenge.
+Here, selecting a unique identifier for your group will be an exciting challenge.
 
 - [**Game 1: Shakey Donkey**](shakeydonkey/shakeydonkey.md)
     This is a game that uses the micro:bit radio. See whether you can figure out how to play the game and how it works.
@@ -69,7 +69,7 @@ Here, selecting a unique identifier for your group will be an interesting challe
 - [**Two-way Unicast**](twowayunicast/twowayunicast.md)
     It's no use talking with somebody if you don't get a response back. 
 In this chapter, you will program your micro:bit to send a message and to get a reply. 
-Also, you will work out how long it takes for a reply to come back. 
+Also, you will work out how long it takes for a response to come back. 
 Doing this, you will also program one of the most important tools used on the
     Internet: Ping.
 
@@ -95,8 +95,8 @@ In this chapter, you will test how well acknowledgements work to improve reliabi
 
 - [**Game 4: Reaction Game**](reactiongame/reactiongame.md)
     This is the game that Jonathan Grout came up with when we worked on this Python edition.
-    The Reaction Game is a simple two player game inspired by the popular toy Bop It[^1], 
-    allowing you to test your reaction time against a friend by performing
+    The Reaction Game is a simple two-player game inspired by the popular toy Bop It[^1]. The game 
+   tests your reaction time against an opponent by performing
     actions that the micro:bit tells you to do. Radio communication will help you and your opponent
     coordinate your game turns.
 
