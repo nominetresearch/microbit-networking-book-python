@@ -132,7 +132,7 @@ This group ID will be the
 broadcast address. This is like tuning in to the correct channel to
 receive a TV broadcast.
 
-**Instruction:** Program your receiver micro:bit to turn on its radio. To do this you'll first need to import the radio module:
+**Instruction:** Program your receiver micro:bit to turn on its radio. To do this, you'll first need to import the radio module:
 
 ```Python
 import radio
