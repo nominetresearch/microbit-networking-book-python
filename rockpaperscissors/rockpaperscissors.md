@@ -45,7 +45,7 @@ Programming: Rock, paper, scissors
 
 To program this game, it is best to work with a teammate. Task 1 is for
 familiarising you with the game and will not use the radio. Starting
-from Task 2, you will start writing the parts of your program to play
+from Task 2, you will begin writing the parts of your program to play
 this game over the radio.
 
 ### Task 1: Start with the simple game
@@ -77,7 +77,7 @@ Notice that the program gives a number to *rock*, *paper* and
 **Instruction:** Program the code shown above,
 and download it to your micro:bits. Play the game with a
 friend. You will each shake your micro:bits at the same time and then
-decide who wins using the games rules as described above.
+decide who wins using the rules of the game as described above.
 
 ### Task 2: Hand shapes over the radio with unicast
 
@@ -125,7 +125,7 @@ program these rules in your code. Your program will:
 
 **Instruction:** Program the rules. Make sure that your code does unicast communication as described in chapter [Unicast Communication: One to One](../unicast/unicast.md)).
 
-**Hint:** You may need two variables in your code, so that the game is only played when both players selected their hand and received their opponent's choice. Let's call these variables: *selected* and *received*. *selected* is set to *True* when you press button B to make your selection. *received* is set to *True* when you receive your opponent’s hand. In your program, the game is only played when both *selected* and *received* are *True*. Once you play the game, these variables need to be set to *False* for the next round.
+**Hint:** You may need two variables in your code so that the game is only played when both players selected their hand and received their opponent's choice. Let's call these variables: *selected* and *received*. The *selected* variable is set to *True* when you press button B to make your selection. The *received* variable is set to *True* when you receive your opponent’s hand. In your program, the game is only played when both *selected* and *received* are *True*. Once you play the game, these variables need to be set to *False* for the next round.
 
 After you program the game, play it with your teammate! Who
 wins more often?
