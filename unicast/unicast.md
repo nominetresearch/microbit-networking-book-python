@@ -6,9 +6,9 @@ Unicast communication: One to One
 Introduction
 ------------
 
-Unicast, sending messages to a single receiver, is how we typically communicate on the Internet. For example, to view a web page, we send messages to a server, which in turn sends us the page to display on our browser.
+Unicast, sending messages to a single receiver, is how we typically communicate on the internet. For example, to view a web page, we send messages to a server, which in turn sends us the page to display on our browser.
 
-In this chapter, you will send unicast messages, for example to a
+In this chapter, you will send unicast messages, for example, to a
 friend’s or teammate’s micro:bit. Doing this, you will learn some core ideas of computer networking, including:
 
 - the concept of *unicast*
@@ -64,12 +64,12 @@ To support an address for each micro:bit, we can modify what we send so that it 
 ![A data packet contains a message and a header. A header contains information to help a protocol such as sender and receiver addresses, and message types. Different protocols may add different headers to a message.](Datapacket.png)
 
 !!! note ""
-	**Figure 1:** A data packet contains a message and a header. A header contains information to help a protocol such as sender and receiver addresses, and message types. Different protocols may add different headers to a message.
+	**Figure 1:** A data packet contains a message and a header. A header contains information to help a protocol such as the sender and receiver addresses, and message types. Different protocols may add different headers to a message.
 
 The figure above shows how the data and one header forms a data
 packet. In this figure, as well as the sender and receiver addresses, the example header also includes a message type. Message type tells the receiver what type of a message it is receiving, for example, whether it is a text or an image. This helps the receiver micro:bit to decide how to process, for example, display the message.
 
-In this chapter, to unicast to other micro:bits, you will create a data packet by adding a header with source and destination addresses.
+In this chapter, to unicast to other micro:bits, you will create a data packet by adding a header with the source and destination addresses.
 
 Programming: Sending and receiving unicast messages
 ---------------------------------------------------
@@ -170,7 +170,7 @@ Problems
 
 4. When selecting an address size for your message header, can you pick any size you like? In your program, what happens if you increase your address size to 10 letters? Do you see any benefits? Or are there any limitations?
 
-5. How does the size of a data packet header affect the actual packet size? If your data packet size were 100 Bytes, and your header size were 10 Bytes, how big could your messages be? What happens if the header size increases to 50 Bytes?
+5. How does the size of a data packet header affect the actual packet size? If your data packet size is 100 Bytes, and your header size is 10 Bytes, how big can your messages be? What happens if the header size increases to 50 Bytes?
 
 Solutions
 ---------
