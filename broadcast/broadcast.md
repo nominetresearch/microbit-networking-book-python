@@ -6,7 +6,7 @@ Broadcast communication: One to All
 Introduction
 ------------
 
-Wireless (radio) communication, for example, WiFi and mobile phones, is a popular way to connect to the Internet. In [Communication over Wires](../wiredcommunication), you
+Wireless (radio) communication, for example, WiFi and mobile phones, is a popular way to connect to the Internet. In [Communication over Wires](../wiredcommunication/wiredcommunication.md), you
 connected two micro:bits via wires. In this chapter, you will connect your micro:bits using the embedded radios in your micro:bits.
 
 Doing this, you will not only learn how to use your micro:bit’s radio but also, broadcast communication. Wireless communication is typically broadcast: one micro:bit can send messages to all micro:bits in its
