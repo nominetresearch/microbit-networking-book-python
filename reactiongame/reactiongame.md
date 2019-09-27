@@ -6,7 +6,7 @@ Unlike the rest of the chapters, the Reaction Game is not explained with a step 
 You should use your own knowledge gained from completing the other chapters to 
 help you create your program.
 
-The Reaction Game is a simple two player game inspired by the popular toy *Bop It*[^1]. This game allows you to test your reaction time against a friend by performing actions that the micro:bit tells you to do. On your turn, you'll be asked to complete the action displayed on the micro:bit screen, which will be one of:
+The Reaction Game is a simple two-player game inspired by the popular toy *Bop It*[^1]. This game allows you to test your reaction time against a friend by performing actions that the micro:bit tells you to do. On your turn, you'll be asked to complete the action displayed on the micro:bit screen, which will be one of:
 
 - Press button A
 - Press button B
@@ -27,19 +27,19 @@ then you lose and your opponent wins. Then the game will switch to your opponent
 
 **Instructions:** Your program must have these features:
 
-1. A list of actions that the user will try to perform
+1. A list of actions that the user will try to perform.
 2. The game begins when either player presses button A.
-3. The game is played in turns, and initially, each player's turn is 3 seconds
-4. On their turn, a player's microbit will display a letter ('A', 'B', 'L', 'R' or 'S') corresponding to an action (Press A, press B, tilt left, tilt right or shake)
-5. The player must perform that action within their turn duration, otherwise they lose
-6. If the player performs the correct action, the duration of their next turn will be 250 milliseconds less, down to a minimum of half a second. Then the game switches to opponent's turn.
+3. The game is played in turns, and initially, each player's turn is 3 seconds.
+4. On their turn, a player's micro:bit will display a letter ('A', 'B', 'L', 'R' or 'S') corresponding to an action (Press A, press B, tilt left, tilt right or shake).
+5. The player must perform that action within their turn duration; otherwise, they lose.
+6. If the player completes the correct action, the duration of their next turn will be 250 milliseconds less, down to a minimum of half a second. Then the game switches to opponent's turn.
 7. If a player loses, display a sad face on their screen. Display a happy face on the screen of the winner.
 
 ### Extended Activity
 
 !!! attention "Exercise 1"
         For a harder version of the game, each player should also lose if they perform the incorrect action on their turn.
-        For example, you would lose if the micro:bit displayed 'A' and you pressed button B.
+        For example, you would lose if the micro:bit displayed 'A', and you pressed button B.
         Modify your code cause a player to lose if they perform the wrong action.
 
 
