@@ -93,4 +93,12 @@ In this chapter, you will test how well acknowledgements work to improve reliabi
     your micro:bits. Your experience with radio communication and
     networking will help you along the way.
 
+- [**Game 4: Reaction Game**](reactiongame/reactiongame.md)
+    This is the game that Jonathan Grout came up with when we worked on this Python edition.
+    The Reaction Game is a simple two player game inspired by the popular toy Bop It[^1], 
+    allowing you to test your reaction time against a friend by performing
+    actions that the micro:bit tells you to do. Radio communication will help you and your opponent
+    coordinate your game turns.
+
+
 Let's start!
