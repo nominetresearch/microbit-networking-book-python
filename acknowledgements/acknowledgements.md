@@ -7,7 +7,7 @@ Introduction
 ------------
 
 In the previous chapter, you used retransmissions to deal with transmission errors. In this chapter, you will improve on this by using acknowledgements. Doing this activity, you will learn
-several key methods and protocols for error control in networking.
+several essential methods and protocols for error control in networking.
 
 In summary, you will learn:
 
@@ -35,9 +35,9 @@ To avoid this, we will introduce a new concept called
 *acknowledgements*.
 
 !!! hint "Definition 1: _Acknowledgement (ACK)_"
-	Acknowledgements are small messages that the receiver sends back, to tell the sender it received a message. The sender then knows it doesn't need to retransmit, and is ready to send the next message. 
+	Acknowledgements are small messages that the receiver sends back, to tell the sender it received a message. The sender then knows it doesn't need to retransmit and is ready to send the next message. 
 	
-If the sender does not receive an acknowledgment, only then it should retransmit its message.
+If the sender does not receive an acknowledgement, only then it should retransmit its message.
 
 But how long should the sender wait for an acknowledgement? This is
 determined by a *timeout*.
@@ -56,7 +56,7 @@ Repeat Request (ARQ)*.
 	Automatic Repeat Request is an error
 	control method. It uses acknowledgements and timeouts to retransmit
 	packets. Retransmissions may continue until the sender receives an
-	acknowledgment, or a maximum number is reached.
+	acknowledgement, or a maximum number is reached.
 
 ARQ is used both in the Internet and mobile networks.
 
@@ -74,9 +74,9 @@ In its simplest form, an Automatic Repeat Request uses the
 Notice that in the Stop-and-Wait protocol, the sender cannot send a new packet until it
 receives the acknowledgement for the previous one.
 
-The figure below shows an example of a successful retransmission. The sender sends "Hello" and the receiver responds with an ACK. The sender received the ACK before the timeout ends, so it knows the packet was received OK. Now, the sender can start sending another message.
+The figure below shows an example of successful retransmission. The sender sends "Hello", and the receiver responds with an ACK. The sender received the ACK before the timeout ends, so it knows the packet was received OK. Now, the sender can start sending another message.
 
-![Stop-and-Wait ARQ protocol: The receiver sends and ACK back to the sender, so the sender knows that the "Hello" message arrived OK.](c9_Ack1.png)
+![Stop-and-Wait ARQ protocol: The receiver sends an ACK back to the sender, so the sender knows that the "Hello" message arrived OK.](c9_Ack1.png)
 
 !!! note ""
 	**Figure 1:** Stop-and-Wait ARQ protocol: The receiver sends and ACK back 
@@ -89,7 +89,7 @@ Now let's look at some error cases. Figure below shows that the first message fr
 !!! note ""
 	**Figure 2:** Stop-and-Wait ARQ protocol: The message gets lost, so the sender retransmits it.
 
-The figure below shows an example where the message from the sender is received, but the ACK from the receiver is lost. Again, when the timout ends, the sender has not received an ACK. So, it retransmits its message. The receiver receives the message, and again, sends an ACK. This time the ACK succeeds and things can go as normal.
+The figure below shows an example where the message from the sender is received, but the ACK is lost. Again, when the timout ends, the sender has not received an ACK. So, it retransmits its message. The receiver gets the message, and again, sends an ACK. This time the ACK succeeds and things can go as usual.
 
 ![Stop-and-Wait ARQ protocol: The message was received, but the ACK gets lost, so the sender retransmits the message.](c9_Ack3.png)
 
@@ -111,7 +111,7 @@ problem that can happen when messages or ACKs are delayed. In other words,  time
 
 !!! hint "Definition 5: _Sequence number_"
 	A sequence number is a number chosen by the sender, and included in the packet header. When the
-	receiver sends an ACK, it includes the next sequence number to tell the sender that it received the previous packet, and is ready for the next one.
+	receiver sends an ACK, it contains the next sequence number to tell the sender that it received the previous packet, and is ready for the next one.
 
 For example, when the sender sends “Hello, 0”, this is a “Hello” message
 with a sequence number 0. On receiving this packet, the receiver will
@@ -224,7 +224,7 @@ Solutions
 ---------
 
 Solutions for this chapter can be found under [the Github Directory](/code).
-You can find example test results in [ExampleTestResults.md](ExampleTestResults.md).
+You can find the example test results in [ExampleTestResults.md](ExampleTestResults.md).
 
 Resources
 ---------
