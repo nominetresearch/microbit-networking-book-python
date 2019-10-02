@@ -8,7 +8,7 @@ theme: readthedocs
 #extra_javascript: [embed.js]
 
 # not needed (we only have absolute links outside this mkdocs project)
-#site_url: https://microbit.nominetresearch.uk/
+#site_url: https://microbit.nominetresearch.uk/networking-book-online-python/
 
 # link to github source
 repo_url: https://github.com/nominetresearch/microbit-networking-book-python
@@ -38,6 +38,7 @@ nav:
 - 'Handling errors: Retransmissions': retransmissions/retransmissions.md
 - 'Handling errors: Acknowledgements': acknowledgements/acknowledgements.md
 - 'Game 3: Battleship over Radio': battleship/battleship.md
+- 'Game 4: Reaction Game': reactiongame/reactiongame.md
 - About:
   - 'Acknowledgements': about/thankyou.md
   - 'Licence': about/licence.md
