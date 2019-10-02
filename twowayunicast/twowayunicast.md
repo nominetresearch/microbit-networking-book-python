@@ -184,7 +184,7 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found under [the Github directory](/code).
+Solutions for this chapter can be found under [the Github directory](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/twowayunicast/code).
 
 Resources
 ---------
