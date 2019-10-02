@@ -149,7 +149,7 @@ Finally, let’s look at Part 4 in the last figure.
 Solutions
 ---------
 
-Solutions for this chapter can be found under the [GitHub directory](/code)
+Solutions for this chapter can be found under the [GitHub directory](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/shakeydonkey/code).
 
 [^1]: This game is by David Whale. We thank him for allowing us to use
     it in this book.
