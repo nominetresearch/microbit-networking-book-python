@@ -212,7 +212,7 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found [in the Github folder](/code).
+Solutions for this chapter can be found [in the Github folder](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/broadcast/code).
 
 Resources
 ---------
