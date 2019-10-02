@@ -266,7 +266,7 @@ to change in your program?
 Solutions
 ---------
 
-Solutions for this chapter can be found under microbit-networking-book-python/battleship/code
+Solutions for this chapter can be found in [Github](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/battleship/code). 
 
 [^1]: Battleship in Wikipedia: [https://en.wikipedia.org/wiki/Battleship_(game)](https://en.wikipedia.org/wiki/Battleship_(game))
 
