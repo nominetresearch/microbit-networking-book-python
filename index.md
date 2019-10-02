@@ -100,4 +100,4 @@ Outline
 
 Let's start!
 
-[^1]: Some text. https://en.wikipedia.org/wiki/Bop_It
+[^1]: Bop It in Wikipedia: [https://en.wikipedia.org/wiki/Bop_It](https://en.wikipedia.org/wiki/Bop_It)
