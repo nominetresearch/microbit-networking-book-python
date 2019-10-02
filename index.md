@@ -27,9 +27,6 @@ which is why we wrote this book. We've enjoyed designing the tasks and challenge
 
 Editions
 --------
-
-The online edition of this book is available from the Nominet Research's website at ...
-
 The online edition of the Makecode version of this book is available from the Nominet Research's website at [https://microbit.nominetresearch.uk/networking-book-online/](https://microbit.nominetresearch.uk/networking-book-online/).
 A PDF version of the same book is available for [download](https://microbit.nominetresearch.uk/networking-book-pdf/networking_with_the_microbit.pdf).
 You can get also buy a printed copy from [Amazon.co.uk](https://www.amazon.co.uk/Networking-micro-bit-Anthony-Kirby/dp/1973396769) or [Amazon.com](https://www.amazon.com/Networking-micro-bit-Anthony-Kirby/dp/1973396769) (this is the cheapest & most efficient way for us to make printed copies available).
