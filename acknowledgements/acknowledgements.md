@@ -223,7 +223,7 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found under [the Github Directory](/code).
+Solutions for this chapter can be found under [the Github Directory](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/acknowledgements/code).
 You can find the example test results in [ExampleTestResults.md](ExampleTestResults.md).
 
 Resources
