@@ -1,4 +1,4 @@
-%define pkg_name microbit-networking-online
+%define pkg_name microbit-networking-online-python
 
 %define maj 0
 %define min 1
