@@ -142,7 +142,7 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found in [the Github folder](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/groupcommunication/code)
+Solutions for this chapter can be found in [the Github folder](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/groupcommunication/code).
 
 Resources
 ---------
