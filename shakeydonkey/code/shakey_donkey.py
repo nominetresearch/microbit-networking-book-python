@@ -32,7 +32,7 @@ while True:
     if number is not None:
         if number.isdigit() == True:
             caught = running_time()
-            you += int(number)
+            you = int(number)
             display.show(donkey)
 
     # If button A is pressed, check 'me' and 'you' 
@@ -43,7 +43,6 @@ while True:
             display.show(Image.SAD)
         else:
             display.show(Image.HAPPY)
-        
         me = 0
         you = 0
         caught = 0

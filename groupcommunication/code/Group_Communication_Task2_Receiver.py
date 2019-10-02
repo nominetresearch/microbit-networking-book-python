@@ -2,6 +2,8 @@ from microbit import *
 import radio
 
 radio.on()
+
+#Comment out this line to set your group
 #radio.config(group = 1)
 
 counter_number = 0
@@ -16,7 +18,7 @@ while True:
             # Check if received a number  
             if(number>=0 and number <=9):
                 counter_number += 1
-                display.scroll(message)
+                display.show(message)
             else:
                 counter_other += 1
         else:

@@ -6,9 +6,9 @@ Unicast communication: One to One
 Introduction
 ------------
 
-Unicast, sending messages to a single receiver, is how we typically communicate on the Internet. For example, to view a web page, we send messages to a server, which in turn sends us the page to display on our browser.
+Unicast, sending messages to a single receiver, is how we typically communicate on the internet. For example, to view a web page, we send messages to a server, which in turn sends us the page to display on our browser.
 
-In this chapter, you will send unicast messages, for example to a
+In this chapter, you will send unicast messages, for example, to a
 friend’s or teammate’s micro:bit. Doing this, you will learn some core ideas of computer networking, including:
 
 - the concept of *unicast*
@@ -51,11 +51,11 @@ According to Internet Protocol, each device is given a unique *address*, called 
 	A unique string that identifies computers that use the
 	Internet Protocol  to communicate over a network. This string is made up of 4 decimal numbers, that range between 0 and 255. Each decimal is separated by dots. For example, 213.248.234.11 is an IP address.
 
-*IP address* is used for unicast on the Internet.
-Remember, in the previous chapters, you used special addresses for broadcast and multicast. For this, you changed the group ID in your programs.  When you change the group ID, you partly change your micro:bit's address (although it is different than an IP address).
-Notice that, setting a group ID limits the group of micro:bits to receive messages from each other. If the group is limited to two micro:bits, then this enables unicast communication between them.
+Remember, in the previous chapters, you changed your micro:bit's group ID in your programs to broadcast or multicast.  Setting the group ID helped you to limit the group of micro:bits to receive messages from each other. If the group is limited to two micro:bits, then this enables unicast communication between them.
 
-But, what if we want each micro:bit to have its address (like the IP address) that we can send messages directly too. Then, in addition to the message we want to send, our micro:bit should also say who the message is for.  On the internet, when two computers communicate, the sender sends a data packet, which includes both the message and this type of information.
+But, what if we want each micro:bit to have its address (like the IP address) that we can send messages directly too. Note that, in this case, two micro:bits should have the same group ID to be able to  send to and receive messages from each other.
+
+To support an address for each micro:bit, we can modify what we send so that it also includes who the message is for.  On the internet, when two computers communicate, the sender sends a data packet, which includes both the message and address information.
 
 !!! hint "Definition 4: _Data packet_" 
 	A data packet is a piece of data sent over a network.
@@ -64,12 +64,12 @@ But, what if we want each micro:bit to have its address (like the IP address) th
 ![A data packet contains a message and a header. A header contains information to help a protocol such as sender and receiver addresses, and message types. Different protocols may add different headers to a message.](Datapacket.png)
 
 !!! note ""
-	**Figure 1:** A data packet contains a message and a header. A header contains information to help a protocol such as sender and receiver addresses, and message types. Different protocols may add different headers to a message.
+	**Figure 1:** A data packet contains a message and a header. A header contains information to help a protocol such as the sender and receiver addresses, and message types. Different protocols may add different headers to a message.
 
 The figure above shows how the data and one header forms a data
-packet. In this figure, as well as the sender and receiver addresses, the example header also includes a message type. Message type tells the receiver whether it is receiving, for example, a text or an image. This helps the receiver micro:bit to decide, for example, how to display the message.
+packet. In this figure, as well as the sender and receiver addresses, the example header also includes a message type. Message type tells the receiver what type of a message it is receiving, for example, whether it is a text or an image. This helps the receiver micro:bit to decide how to process, for example, display the message.
 
-In this chapter, to unicast to other micro:bits, you will create a data packet by adding a header with source and destination addresses.
+In this chapter, to unicast to other micro:bits, you will create a data packet by adding a header with the source and destination addresses.
 
 Programming: Sending and receiving unicast messages
 ---------------------------------------------------
@@ -82,9 +82,9 @@ For unicast to work, micro:bits should receive all messages sent, but the progra
 
 **Description:** To receive any packet, sent by anybody, you need to use broadcast as the underlying communication.
 
-**Instruction:** Set your radio group ID to be unique like you did in [Broadcast Communication: One to All](../broadcast/broadcast.md).
+**Instruction:** Set your radio group ID like you did in [Broadcast Communication: One to All](../broadcast/broadcast.md).
 
-### Task 2: Design your header
+### Task 2: Design your header and create your data packet
 
 **Description:** The sender micro:bit needs to add a header to each
 message before sending. The message header will include:
@@ -93,30 +93,22 @@ message before sending. The message header will include:
 
 - receiver address
 
-For the message header, you will create a special string.
+Your final data packet will have the following information:
+
+- header
+- your message
 
 **Instruction:** First construct the sender and receiver addresses. With your teammate, pick two-letter strings as micro:bit addresses. You need one address for your micro:bit, and one address for your teammate’s micro:bit. For example, you can use your initials: These are “CS” and “AK” for the authors of this book. **Important! Your addresses should be unique across all the addresses of micro:bits that are in the same room
 with you.**
 
-Next, join the strings for sender and receiver addresses to create a
+Next, join the strings for sender and receiver addresses to create the message
 header.
 
-### Task 3: Create your packet and send
-
-**Description:** Now it is time to create your packet, a header and a message form a packet.
-Your final packet will have the following information:
-
-- sender address
-
-- receiver address
-
-- your message
-
-**Instruction:** Pick a string as your message. For example: “Hello”. Join your message string with your header.
+Pick a string as your message. For example: “Hello”. Join your message string with your header.
 
 Now, your sender micro:bit is ready to send unicast packets.
 
-### Task 4: Receive a packet
+### Task 3: Receive a packet
 
 **Description:** When the receiver micro:bit receives a packet, it
 decides whether to receive or ignore the packet. Notice that the
@@ -135,7 +127,7 @@ The receiver needs to use this information to decide which packets are for itsel
 
 Check if the *receiver address* is equal to your micro:bit’s address. If it is, then your micro:bit is the rightful receiver. Display the sender address and the message on your display. If your micro:bit is not the receiver, be a good citizen, and ignore the message.
 
-### Challenge: Filter senders
+### Task 4: Filter senders
 
 **Description:** Sometimes, you may not want to receive messages just from anybody. For this, you will write a program so that you only receive messages from two people you know. We will call this your *allow-list* (often referred to as a *whitelist*).
 
@@ -178,12 +170,12 @@ Problems
 
 4. When selecting an address size for your message header, can you pick any size you like? In your program, what happens if you increase your address size to 10 letters? Do you see any benefits? Or are there any limitations?
 
-5. How does the size of a data packet header affect the actual packet size? If your data packet size were 100 Bytes, and your header size were 10 Bytes, how big could your messages be? What happens if the header size increases to 50 Bytes?
+5. How does the size of a data packet header affect the actual packet size? If your data packet size is 100 Bytes, and your header size is 10 Bytes, how big can your messages be? What happens if the header size increases to 50 Bytes?
 
 Solutions
 ---------
 
-Solutions for this chapter can be found under microbit-networking-book-python/unicast/code
+Solutions for this chapter can be found in the [Github directory](/code)
 
 Resources
 ---------

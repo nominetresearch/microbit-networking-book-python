@@ -11,9 +11,9 @@ game. If you have not already seen it, Shakey Donkey is a micro:bit game
 that uses the micro:bit's radio [^1].
 
 Shakey Donkey is played with two players, and it measures how fast you
-react to a Donkey appearing on your micro:bit's display. The game starts with
-shaking micro:bits. The moment your micro:bit displays a Donkey, you
-should shout “Donkey!” and shake your micro:bit to make it disappear. At
+react to a donkey appearing on your micro:bit's display. The game starts with
+shaking micro:bits. The moment your micro:bit displays a donkey, you
+should shout “Donkey!” and shake your micro:bit to make it disappear. In
 the end, when you press the button A, if your micro:bit displays a happy
 face, you won!
 
@@ -41,7 +41,7 @@ Programming: Playing Shakey Donkey
 
 **Description:** To be able to play this game in groups of 2, you will
 set a unique group ID for your pair. Then you will program the Shakey
-Donkey game given to you in three parts in the
+Donkey game given to you in three parts in
 the following figures.
 
 **Instruction:** To set your groups, repeat the activity from
@@ -91,7 +91,7 @@ shown in the next figure. Add it to your code.
     if number is not None:
         if number.isdigit() == True:
             caught = running_time()
-            you += int(number)
+            you = int(number)
             display.show(donkey)
 ```
 !!! note ""
@@ -126,7 +126,7 @@ Problems
 
 Let’s first look at Parts 1 and 2, given in the first and second figures.
 
-* At the beginning, what is the value of the "caught" variable for both players? Does anybody need to change the "me" variable?
+* In the beginning, what is the value of the "caught" variable for both players? Does anybody need to change the "me" variable?
 
 * Who gets to send their "me" variable first?
 
@@ -134,13 +134,13 @@ Next, let’s look at Part 3, in the third figure.
 
 * When you receive a number, you set the "caught" variable. What does the "caught" variable mean?
 
-* You also change the "you" variable by the "receivedNumber". What does the "you" variable track?
+* You also change the "you" variable to the "receivedNumber". What does the "you" variable track?
 
 Now, let’s look at both Parts 2 and 3.
 
 * Imagine you already started playing the program. You saw some donkeys appear on your display, and you shook them away. How did your "me" variable change? What is it equal to?
 
-Finally, let’s look at Part 4, in the last figure.
+Finally, let’s look at Part 4 in the last figure.
 
 * How do you know you won? Does the other player know the result? How? Explain how the "me" and "you" variables are used to decide the winner.
 
@@ -149,7 +149,7 @@ Finally, let’s look at Part 4, in the last figure.
 Solutions
 ---------
 
-Solutions for this chapter can be found under microbit-networking-book-python/shakeydonkey/code
+Solutions for this chapter can be found under the [GitHub directory](/code)
 
 [^1]: This game is by David Whale. We thank him for allowing us to use
     it in this book.

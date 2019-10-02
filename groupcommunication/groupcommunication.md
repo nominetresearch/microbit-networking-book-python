@@ -7,13 +7,12 @@ Introduction
 ------------
 
 In the previous chapter, you experimented with broadcast: sending messages to everybody. In this chapter, you will learn about sending a
-message so that it goes to a smaller group of people. This is an activity that is best carried out with a large group of friends or class
-mates so that you can experiment with different groups and group sizes.
+message so that it goes to a smaller group of people. This is an activity that is best carried out with a large group of friends or classmates so that you can experiment with different groups and group sizes.
 
-Group communication (also known as multicast) is an interesting concept,
+Group communication (also known as multicast) is an interesting concept
 and enables several of today’s Internet technologies. For
 example, using this technology,  videos can be sent faster over the
-Internet. 
+Internet.
 
 In this chapter, you will learn:
 
@@ -34,15 +33,15 @@ Background
 In the previous chapter, all micro:bits could receive messages from all the
 other micro:bits in their vicinity. This might have got confusing (or amusing). Now,
 let’s try limiting who you can send messages to and receive messages
-from. This is called group communication. Group communication is used in
-the Internet to send to many people at the same time. For example,
+from. This is called group communication. Group communication is used on
+the internet to send to many people at the same time. For example,
 Internet television and videoconferencing use group communication.
 
 !!! hint "Definition 1: _Communications medium_"
 	In group communication or multicast, a message
 	is sent only to the computers in the group.
 
-For this, the messages need to be labeled with a *group* or *multicast
+For this, the messages need to be labelled with a *group* or *multicast
 address*.
 
 !!! hint "Definition 2: _Group address_"
@@ -85,15 +84,15 @@ Binary revision page in the Resources section.
 Programming: Creating groups and messaging within groups
 --------------------------------------------------------
 
-In this chapter, you need to work together in pairs or small groups with at least 2 micro:bits in each group. You will complete two tasks to
+In this chapter, you need to work together in pairs or small groups with at least two micro:bits in each group. You will complete two tasks to
 program your micro:bits to send and receive messages within your group.
 
 ### Task 1: Create groups
 
 **Description:** In this task, you will choose a unique group ID for
 your group and configure your radios with this group ID. When
-choosing group IDs, you have to think about the best way to choose
-this number. **Hint: What would happen if two groups choose the same
+selecting the group IDs, you have to think about the best way to select
+this number. **Hint: What would happen if two groups use the same
 number, and how would you make sure that doesn’t happen?**
 
 **Instruction:** Use the board and post-it notes to choose a group
@@ -106,13 +105,11 @@ send and receive messages in your group. You will change these programs
 to count the number of messages you receive. This way, you will test
 whether you receive messages only from your group.
 
-**Instruction:** Use the SendNumberOrString.hex or your own code from
-the previous chapter [Broadcast communication:One to all](../broadcast/broadcast.md) to send numbers or strings. Write a receiver program
-that increments a `counter_number` each time it receives a number between 0-9, and increments a `counter_other` when it receives something else. When you press
-the button A at the receiver, it displays the value of both counters. With
+**Instruction:** Use the Broadcast_Communications_sender.hex or your own code from the previous chapter [Broadcast communication:One to all](../broadcast/broadcast.md) to send numbers or strings. Write a receiver program
+that increments a variable named `counter_number` each time it receives a number between 0-9 and increments a `counter_other` when it receives something else. When you press button A at the receiver, it displays the value of both counters. With
 your group, test that you are receiving the correct number of messages.
-Test together with other groups that you are not receiving their
-messages.
+Test together with other groups that when they are sending string messages, you are not receiving them.
+(Note: If multiple groups were sending numbers, and their group numbers were the same, you may not be able to verify if and when you receive from a micro:bit outside your group.)
 
 Extended activity
 -----------------
@@ -126,7 +123,7 @@ Extended activity
 Problems
 --------
 
-1. Fill in the blank in this sentence: “A one-to-may communication between one sender and a group of receivers is *---* communication.”
+1. Fill in the blank in this sentence: “A one-to-many communication between one sender and a group of receivers is *---* communication.”
 
     1. unicast
 
@@ -145,7 +142,7 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found under microbit-networking-book-python/groupcommunication/code
+Solutions for this chapter can be found in [the Github folder](/code)
 
 Resources
 ---------

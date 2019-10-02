@@ -15,7 +15,7 @@ while True:
         number = str(random.randint(0, 9))
         radio.send(number)
         sleep(1000)
-    # Choose a random string to send
+    # Press button B to choose a random string to send
     elif button_b.is_pressed(): 
         string = random.choice(stringlist)
         radio.send(string)
