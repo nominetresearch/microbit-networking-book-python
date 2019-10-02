@@ -175,7 +175,7 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found in the [Github directory](/code)
+Solutions for this chapter can be found in the [Github directory](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/unicast/code).
 
 Resources
 ---------
