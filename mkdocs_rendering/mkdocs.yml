@@ -11,7 +11,7 @@ theme: readthedocs
 #site_url: https://microbit.nominetresearch.uk/
 
 # link to github source
-repo_url: https://github.com/nominetresearch/microbit-networking-book
+repo_url: https://github.com/nominetresearch/microbit-networking-book-python
 # need a custom edit URI because we've got /docs in a non-standard place
 edit_uri: blob/master/
 
