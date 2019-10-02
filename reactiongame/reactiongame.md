@@ -46,7 +46,7 @@ then you lose and your opponent wins. Then the game will switch to your opponent
 Solutions
 ---------
 
-Solutions for this chapter can be found in the [Github page](code)
+Solutions for this chapter can be found in [Github](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/reactiongame/code).
 
 [^1]: Bop It in Wikipedia: [https://en.wikipedia.org/wiki/Bop_It](https://en.wikipedia.org/wiki/Bop_It)
 
