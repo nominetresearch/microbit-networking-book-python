@@ -151,7 +151,7 @@ Problems
 Solutions
 ---------
 
-Solutions for this chapter can be found under [the GitHub Directory](/code).
+Solutions for this chapter can be found under [the GitHub Directory](https://github.com/nominetresearch/microbit-networking-book-python/tree/master/rockpaperscissors/code).
 
 Resources
 ---------
